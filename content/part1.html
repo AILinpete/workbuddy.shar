@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第一篇 · 使用手册：先把 WorkBuddy 用起来 - WorkBuddy 蓝皮书</title>
+<link rel="stylesheet" href="../assets/content.css">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+<nav class="doc-nav">
+  <div class="doc-nav-inner">
+    <a href="../index.html" class="doc-logo"><span class="logo-icon">📘</span><span>WorkBuddy 蓝皮书</span></a>
+    <div class="doc-nav-right">
+      <a href="../index.html" class="doc-back">← 返回首页</a>
+      <button class="btn-theme" id="themeBtn" title="切换主题">🌙</button>
+    </div>
+  </div>
+</nav>
+<div class="doc-layout">
+  <aside class="doc-sidebar">
+    <div class="sidebar-head">PART 01</div>
+    <div class="sidebar-title">第一篇 · 使用手册：先把 WorkBuddy 用起来</div>
+    <ul class="toc"><li><a href="#ch01" class="toc-link">第 1 章 初识 WorkBuddy</a></li><li><a href="#ch02" class="toc-link">第 2 章 WorkBuddy的下载、安装、登录与更新</a></li><li><a href="#ch03" class="toc-link">第 3 章 WorkBuddy 的主界面、任务与工作区</a></li><li><a href="#ch04" class="toc-link">第 4 章 快速完成第一个 WorkBuddy 任务</a></li><li><a href="#ch05" class="toc-link">第 5 章 WorkBuddy加载一个真正用得上的 Skill</a></li><li><a href="#ch06" class="toc-link">第 6 章 WorkBuddy的专家和专家团</a></li><li><a href="#ch07" class="toc-link">第 7 章 WorkBuddy 使用连接器</a></li><li><a href="#ch08" class="toc-link">第 8 章 WorkBuddy 接入小程序与 IM 助理</a></li><li><a href="#ch09" class="toc-link">第 9 章 如何接入外部 API</a></li><li><a href="#ch10" class="toc-link">第 10 章 WorkBuddy 自动化任务</a></li><li><a href="#ch-extra" class="toc-link">课外阅读：一章看懂 AI 工作系统</a></li></ul>
+  </aside>
+  <main class="doc-main">
+    <header class="doc-page-head">
+      <span class="doc-part-badge part-1">PART 01</span>
+      <h1>第一篇 · 使用手册：先把 WorkBuddy 用起来</h1>
+      <p class="doc-sub">从 0 到 1，先把 WorkBuddy 真正用起来</p>
+    </header>
+    <section class="chapter" id="intro"><div class="chapter-body"><h2 id="h-第一篇-使用手册-先把-workbuddy-用起来">第一篇 使用手册：先把 WorkBuddy 用起来</h2>
+<ul class="doc-list"><li><a href="%E7%AC%AC%201%20%E7%AB%A0%20%E5%88%9D%E8%AF%86%20WorkBuddy/index.md">第 1 章 初识 WorkBuddy</a></li><li><a href="%E7%AC%AC%202%20%E7%AB%A0%20WorkBuddy%E7%9A%84%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E7%99%BB%E5%BD%95%E4%B8%8E%E6%9B%B4%E6%96%B0/index.md">第 2 章 WorkBuddy的下载、安装、登录与更新</a></li><li><a href="%E7%AC%AC%203%20%E7%AB%A0%20WorkBuddy%20%E7%9A%84%E4%B8%BB%E7%95%8C%E9%9D%A2%E3%80%81%E4%BB%BB%E5%8A%A1%E4%B8%8E%E5%B7%A5%E4%BD%9C%E5%8C%BA/index.md">第 3 章 WorkBuddy 的主界面、任务与工作区</a></li><li><a href="%E7%AC%AC%204%20%E7%AB%A0%20%E5%BF%AB%E9%80%9F%E5%AE%8C%E6%88%90%E7%AC%AC%E4%B8%80%E4%B8%AA%20WorkBuddy%20%E4%BB%BB%E5%8A%A1/index.md">第 4 章 快速完成第一个 WorkBuddy 任务</a></li><li><a href="%E7%AC%AC%205%20%E7%AB%A0%20WorkBuddy%E5%8A%A0%E8%BD%BD%E4%B8%80%E4%B8%AA%E7%9C%9F%E6%AD%A3%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%20Skill/index.md">第 5 章 WorkBuddy加载一个真正用得上的 Skill</a></li><li><a href="%E7%AC%AC%206%20%E7%AB%A0%20WorkBuddy%E7%9A%84%E4%B8%93%E5%AE%B6%E5%92%8C%E4%B8%93%E5%AE%B6%E5%9B%A2/index.md">第 6 章 WorkBuddy的专家和专家团</a></li><li><a href="%E7%AC%AC%207%20%E7%AB%A0%20WorkBuddy%20%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E5%99%A8/index.md">第 7 章 WorkBuddy 使用连接器</a></li><li><a href="%E7%AC%AC%208%20%E7%AB%A0%20WorkBuddy%20%E6%8E%A5%E5%85%A5%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%8E%20IM%20%E5%8A%A9%E7%90%86/index.md">第 8 章 WorkBuddy 接入小程序与 IM 助理</a></li><li><a href="%E7%AC%AC%209%20%E7%AB%A0%20%E5%A6%82%E4%BD%95%E6%8E%A5%E5%85%A5%E5%A4%96%E9%83%A8%20API/index.md">第 9 章 如何接入外部 API</a></li><li><a href="%E7%AC%AC%2010%20%E7%AB%A0%20WorkBuddy%20%E8%87%AA%E5%8A%A8%E5%8C%96%E4%BB%BB%E5%8A%A1/index.md">第 10 章 WorkBuddy 自动化任务</a></li><li><a href="%E8%AF%BE%E5%A4%96%E9%98%85%E8%AF%BB%EF%BC%9A%E4%B8%80%E7%AB%A0%E7%9C%8B%E6%87%82%20AI%20%E5%B7%A5%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.md">课外阅读：一章看懂 AI 工作系统</a></li></ul></div></section>
+<section class="chapter" id="ch01"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 1 章 初识 WorkBuddy</h2></div><div class="chapter-body"><h2 id="h-第-1-章-初识-workbuddy">第 1 章 初识 WorkBuddy</h2>
+<p><strong>WorkBuddy</strong> 是腾讯最新推出的全场景职场 AI 智能体工作台，</p>
+<p>面向 人力资源、行政、运营、销售、研发等不同职场角色，是一款能够像真正同事一样思考、执行任务并交付结果的 AI 办公应用。</p>
+<p><img src="assets/part1/ch01/001<em>image</em>Ve9kbu40Eo.png" alt="" loading="lazy"></p>
+<h3 id="h-从-回答问题-到-交付结果">从“回答问题”到“交付结果”</h3>
+<p>与传统 AI 助手不同，WorkBuddy 不只是陪用户聊天、回答问题或者给出建议。</p>
+<p>用户只需要用一句自然语言描述需求，它就可以理解任务目标，在本地电脑中自主规划执行步骤，并完成复杂的多模态任务。</p>
+<p>在获得用户授权后，WorkBuddy 可以读取和处理本地文件，自动完成批量文件处理、文档生成、表格分析、PPT 制作、多模态内容创作、行业调研、本地知识库构建等工作。</p>
+<p>对于更加复杂的任务，它还可以自主拆解步骤，并通过多个智能体（Agents）并行，减少人工在不同工具、文件和任务之间反复切换的成本。</p>
+<div class="mermaid">flowchart LR
+    A[说清目标] --&gt; B[读取授权资料]
+    B --&gt; C[拆解任务与选择工具]
+    C --&gt; D[执行并生成产物]
+    D --&gt; E[人工验收]
+    E --&gt;|不通过| F[指出问题并返工]
+    F --&gt; D
+    E --&gt;|通过| G[归档或发布]</div>
+<p>例如，用户可以直接告诉 WorkBuddy，分析这个文件夹中的销售数据，并生成一份汇报 PPT。</p>
+<p><img src="assets/part1/ch01/002<em>image</em>IaB9bqqj6o.png" alt="" loading="lazy"></p>
+<p>WorkBuddy 会自主读取相关文件，理解数据内容，完成分析和总结，并生成最终可以查看和修改的工作成果。</p>
+<p>整个过程中，用户不需要手动上传每一个文件，也不需要一步一步告诉 AI 下一步应该做什么。</p>
+<p>WorkBuddy 面向的是完整的工作任务。</p>
+<p>它的核心能力可以概括为三点，<strong>听得懂人话，能够自主思考规划，也真的能够操作电脑交付成果。</strong></p>
+<p>为了完成不同类型的任务，WorkBuddy 还提供了多模型切换（混元/DeepSeek/GLM/Kimi/MiniMax 等）、MCP Server、Skills 技能包等能力。</p>
+<p>用户可以根据不同任务选择合适的模型，也可以通过 MCP 和 Skills 扩展 WorkBuddy 的工具和专业能力。</p>
+<p>同时，针对本地文件操作、终端执行等场景，WorkBuddy 还提供高危指令拦截和权限控制机制，降低 AI 自主执行过程中的风险。</p>
+<p>想对workbuddy打分，可以去<a href="https://watcha.cn/" target="_blank" rel="noopener">观猹</a>，写出你对workbuddy的真实评价～</p>
+<p><img src="assets/part1/ch01/003<em>image</em>Idhdsahdl.png" alt="" loading="lazy"></p></div></section>
+<section class="chapter" id="ch02"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 2 章 WorkBuddy的下载、安装、登录与更新</h2></div><div class="chapter-body"><h2 id="h-第-2-章-workbuddy的下载-安装-登录与更新">第 2 章 WorkBuddy的下载、安装、登录与更新</h2>
+<h3 id="h-workbuddy下载">WorkBuddy下载</h3>
+<p>下载WorkBuddy，点击官方地址（https://www.codebuddy.cn/work/），选择WorkBuddy，点击“下载WorkBuddy”即可下载。</p>
+<p><img src="assets/part1/ch02/001<em>image</em>GGeabJkE2o.png" alt="" loading="lazy"></p>
+<p>网站会自动检查你当前设备，判断你是什么版本，Mac ARM64、Mac x64或者Windows x64。</p>
+<p><img src="assets/part1/ch02/002<em>image</em>HaXcbwaJXo.png" alt="" loading="lazy"></p>
+<p><em><strong>切记：从官方入口进入下载，不从网盘或不明镜像获取安装包。</strong></em></p>
+<h3 id="h-windows-安装">Windows 安装</h3>
+<ol class="doc-list"><li>下载完成后双击安装文件。</li></ol>
+<p><img src="assets/part1/ch02/003<em>image</em>Ehpebt4Eso.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>如系统弹出安全提示，先核对发布者与下载来源，再决定是否继续。</li></ol>
+<p><img src="assets/part1/ch02/004<em>image</em>LG3MbcWpvo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>按安装向导完成安装并启动 WorkBuddy。</li></ol>
+<p><img src="assets/part1/ch02/005<em>image</em>CMvYbYWFOo.png" alt="" loading="lazy"></p>
+<p><img src="assets/part1/ch02/006<em>image</em>Wujkbd9eTo.png" alt="" loading="lazy"></p>
+<p><img src="assets/part1/ch02/007<em>image</em>V9L2bhWF2o.png" alt="" loading="lazy"></p>
+<p><img src="assets/part1/ch02/008<em>image</em>DjcGbKYJSo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>进入准备运行环境</li></ol>
+<p><img src="assets/part1/ch02/009<em>image</em>Q0l3bAkUPo.png" alt="" loading="lazy"></p>
+<h3 id="h-macos-安装">macOS 安装</h3>
+<ol class="doc-list"><li>打开安装文件，将 WorkBuddy 拖入“应用程序”；</li></ol>
+<p><img src="assets/part1/ch02/010<em>image</em>TmYPbu7Ibo.png" alt="" loading="lazy"></p>
+<p><img src="assets/part1/ch02/011<em>image</em>UlJcbVqX7o.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>从“应用程序”启动；</li></ol>
+<p><img src="assets/part1/ch02/012<em>image</em>LtqPbQ2z6o.png" alt="" loading="lazy"></p>
+<h3 id="h-登录">登录</h3>
+<p>点击登录按钮</p>
+<p><img src="assets/part1/ch02/013<em>image</em>MMIXbZJafo.png" alt="" loading="lazy"></p>
+<p>自动跳转网页登录</p>
+<p><img src="assets/part1/ch02/014<em>image</em>MdmYbB2Avo.png" alt="" loading="lazy"></p>
+<p>选择微信扫码登录，也可以手机号登录</p>
+<p><img src="assets/part1/ch02/015<em>image</em>WZrBbbWono.png" alt="" loading="lazy"></p>
+<p>完成后，即可使用WorkBuddy进行工作</p>
+<p><img src="assets/part1/ch02/016<em>image</em>Pmh8b7xc8o.png" alt="" loading="lazy"></p>
+<p><em>PS：若公司电脑禁止安装软件，不要绕过终端安全策略，应联系 IT 管理员确认白名单或企业部署方式。</em></p>
+<h3 id="h-更新">更新</h3>
+<p>点击左下角个人中心，选择“检查更新”，检查是否有新版本，若有新版本，可更新</p>
+<p><img src="assets/part1/ch02/017<em>image</em>Qt1gbb7J3o.png" alt="" loading="lazy"></p>
+<h3 id="h-常见问题">常见问题</h3>
+<h4 id="h-安装包打不开或提示损坏">安装包打不开或提示损坏</h4>
+<p>先删除安装包并从官网重新下载，核对系统和芯片版本。仍失败时记录系统版本、安装包名和报错截图，通过官方反馈渠道处理，不要随意关闭系统安全功能。</p>
+<h4 id="h-登录后没有反应">登录后没有反应</h4>
+<p>检查默认浏览器是否拦截登录回跳、网络代理是否影响认证、系统时间是否准确。退出应用后重试，并保留日志与截图。</p>
+<h4 id="h-无法读取或写入文件">无法读取或写入文件</h4>
+<p>确认任务选择的工作目录是否正确、系统是否授予对应目录权限、文件是否被其他程序锁定。先用一个空白文本文件测试，不要直接拿重要文件反复试错。</p>
+<h4 id="h-更新前要不要备份">更新前要不要备份</h4>
+<p>应用更新一般不应修改工作文件，但长期项目仍应把输入、产物、配置和自定义 Skill 纳入版本管理或定期备份。</p></div></section>
+<section class="chapter" id="ch03"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 3 章 WorkBuddy 的主界面、任务与工作区</h2></div><div class="chapter-body"><h2 id="h-第-3-章-workbuddy-的主界面-任务与工作区">第 3 章 WorkBuddy 的主界面、任务与工作区</h2>
+<p>WorkBuddy 主界面可以理解为三个区域：左侧（侧边栏）管理任务，中间（对话区）下达和追踪任务，右侧（结果区）查看文件、变更、预览和最终产物。</p>
+<p><img src="assets/part1/ch03/001<em>image</em>MuLCbdPyDo.png" alt="" loading="lazy"></p>
+<h3 id="h-三个区域分别做什么">三个区域分别做什么</h3>
+<div class="table-wrap"><table><thead><tr><th>区域</th><th>主要用途</th><th>使用时重点检查</th></tr></thead><tbody><tr><td>侧边栏</td><td>新建、搜索、切换和管理任务</td><td>是否进入了正确任务</td></tr><tr><td>对话区</td><td>描述需求、补充信息、确认计划</td><td>目标和约束是否完整</td></tr><tr><td>结果区</td><td>查看产物、全部文件、变更与预览</td><td>文件名、路径和改动是否符合预期</td></tr></tbody></table></div>
+<p>侧边栏的“任务”和“工作空间”的区别，在于你是否设置了“工作空间”目录。</p>
+<p>“工作空间”是 WorkBuddy 为了管理任务而设置的目录，每个任务都有一个对应的目录空间，任务可以在目录空间内进行操作。</p>
+<p>若未设置，会在默认安装的目录下执行任务，对话保存在“任务”目录下。</p>
+<h3 id="h-为什么要隔离工作目录">为什么要隔离工作目录</h3>
+<p>工作目录既是效率设置，也是安全边界。把发票、周报、客户材料混在同一个大目录里，会增加误读、误改和信息串用的风险。</p>
+<p>推荐按任务建目录空间。</p>
+<p>同时，可以对目录空间的权限进行设置，当开启“允许完全访问”（开启完全访问后智能体可读写授权目录外文件，请谨慎使用并优先按任务限定目录。）</p>
+<p><img src="assets/part1/ch03/002<em>image</em>DtASbQcrto.png" alt="" loading="lazy"></p>
+<h3 id="h-三种工作模式">三种工作模式</h3>
+<p>WorkBuddy 提供三种工作模式：</p>
+<div class="table-wrap"><table><thead><tr><th>模式</th><th>中文界面</th><th>能做什么</th><th>适合场景</th></tr></thead><tbody><tr><td>Ask</td><td>问一问</td><td>问答、理解和查看，不修改文件</td><td>先了解资料、确认需求</td></tr><tr><td>Craft</td><td>做一做</td><td>可直接操作本地文件、运行代码及系统指令</td><td>路径清楚、风险较低的任务</td></tr><tr><td>Plan</td><td>想一想</td><td>先生成计划，确认后再执行</td><td>多步骤、跨系统、重要文件任务</td></tr></tbody></table></div>
+<p><img src="assets/part1/ch03/003<em>image</em>W7VqbwVeJo.png" alt="" loading="lazy"></p>
+<h3 id="h-选择不同的模型">选择不同的模型</h3>
+<p>默认为自动模式，可以指定你想使用的模型，不同模型积分消耗不同。</p>
+<p><img src="assets/part1/ch03/004<em>image</em>OzThbMYn5o.png" alt="" loading="lazy"></p>
+<div class="table-wrap"><table><thead><tr><th>任务特征</th><th>优先关注</th></tr></thead><tbody><tr><td>大量文本与长资料</td><td>上下文长度，比如 100 万 tokens（1M）</td></tr><tr><td>图片与截图</td><td>需要有视觉理解能力</td></tr><tr><td>高频简单任务</td><td>优先选择响应速度快、成本较低的模型</td></tr></tbody></table></div></div></section>
+<section class="chapter" id="ch04"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 4 章 快速完成第一个 WorkBuddy 任务</h2></div><div class="chapter-body"><h2 id="h-第-4-章-快速完成第一个-workbuddy-任务">第 4 章 快速完成第一个 WorkBuddy 任务</h2>
+<h3 id="h-快速创建一个-workbuddy-任务">快速创建一个 WorkBuddy 任务</h3>
+<ol class="doc-list"><li>点击“新建任务”；</li></ol>
+<p><img src="assets/part1/ch04/001<em>image</em>C4q3bdNKso.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>选择或创建独立工作目录；</li></ol>
+<p><em>PS：WorkBuddy 采用文件夹级授权与高危拦截，首次操作请先在演练目录进行、留意授权范围，处理真实业务数据前谨慎确认</em></p>
+<p><img src="assets/part1/ch04/002<em>image</em>GeeybIFZLo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>判断应该使用模式，默认为Craft，还可以设置成Ask或Plan；</li></ol>
+<p><img src="assets/part1/ch04/003<em>image</em>DZ55bxbCvo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>选择模型，可以指定你想使用的模型，不同模型积分消耗不同。</li></ol>
+<p><img src="assets/part1/ch04/004<em>image</em>JiigbkdTKo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>输入任务说明，“帮我分析一下《电商销售数据.xlsx》数据，生成一份汇报 PPT。”</li></ol>
+<p><img src="assets/part1/ch04/005<em>image</em>ReDxbwNkYo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>如有必要，指定 Skill、专家、连接器或资料库，这里暂时忽略</li></ol>
+<p><img src="assets/part1/ch04/006<em>image</em>INLGb7TDQo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>发送后观察计划、工具调用和文件变更；</li></ol>
+<p><img src="assets/part1/ch04/007<em>image</em>BD1FbDdcEo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>在结果区预览产物并验收。</li></ol>
+<p>文件可以本地打开、上传云端、或分享，注意分享前先确认产物不含敏感或涉密信息，按公司规范选择共享范围。</p>
+<p><img src="assets/part1/ch04/008<em>image</em>TzOAb2lxIo.png" alt="" loading="lazy"></p>
+<h3 id="h-如何写一个任务说明">如何写一个任务说明</h3>
+<div class="table-wrap"><table><thead><tr><th>要素</th><th>要回答的问题</th></tr></thead><tbody><tr><td>目标</td><td>最终要解决什么问题</td></tr><tr><td>输入</td><td>使用哪些文件、目录或链接</td></tr><tr><td>动作</td><td>需要分析、整理、转换还是生成</td></tr><tr><td>约束</td><td>哪些不能改，采用什么规范</td></tr><tr><td>输出</td><td>交付什么文件，放到哪里</td></tr><tr><td>验收</td><td>用什么标准判断合格</td></tr></tbody></table></div>
+<h4 id="h-入门任务-a-整理文件">入门任务 A：整理文件</h4>
+<pre class="code-block"><code>目标：整理 input 目录中的练习文件，便于按类型查找。
+输入：仅处理当前工作区的 input 目录。
+动作：识别文件类型，提出分类和重命名方案。
+约束：不删除、不覆盖原文件；重名时保留两份并标记序号。
+输出：先生成 inventory.xlsx 和 proposed-actions.md。
+验收：清单文件数与 input 实际文件数一致，所有动作可追溯。
+在我确认 proposed-actions.md 前，不移动文件。</code></pre>
+<h4 id="h-入门任务-b-生成会议纪要">入门任务 B：生成会议纪要</h4>
+<pre class="code-block"><code>请把 input/meeting.txt 整理为结构化会议纪要。
+必须包含：会议结论、待办事项、负责人、截止日期、待确认问题。
+不能从原文确认的负责人或日期写“待确认”，不要自行补全。
+输出 output/会议纪要.md 和 output/待办清单.xlsx。
+验收：每一项结论可以在原文找到依据；待办不遗漏负责人和时间状态。</code></pre>
+<h4 id="h-入门任务-c-word-转-ppt">入门任务 C：Word 转 PPT</h4>
+<pre class="code-block"><code>把 input/项目汇报.docx 转成 10 页以内的内部汇报 PPT。
+受众：部门负责人；汇报时长：8 分钟。
+保持原文事实和数字，不新增未经证实的数据。
+结构：背景、现状、问题、方案、计划、需要决策。
+使用 reference/brand-guide.pdf 中的颜色与字体规范。
+输出 output/项目汇报_v1.pptx，同时提供逐页内容清单。
+验收：每页只有一个核心观点，数字与原文一致，正文在投影状态可读。</code></pre></div></section>
+<section class="chapter" id="ch05"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 5 章 WorkBuddy加载一个真正用得上的 Skill</h2></div><div class="chapter-body"><h2 id="h-第-5-章-workbuddy加载一个真正用得上的-skill">第 5 章 WorkBuddy加载一个真正用得上的 Skill</h2>
+<h3 id="h-skill-是什么">Skill 是什么</h3>
+<p>WorkBuddy 本身负责理解任务和组织执行；Skill 则是一组可复用的说明、脚本、参考资料和资源，告诉 Agent 某类任务应该怎样做、调用什么工具、交付什么格式。</p>
+<p>Anthropic 在 2025 年 10 月正式推出 Agent Skills，2025 年 12 月将其发布为开放标准。</p>
+<p>一个最标准的 Skill，大概长这样：</p>
+<pre class="code-block"><code>my-skill/
+├── SKILL.md
+├── scripts/
+│   └── check.py
+├── references/
+│   └── guide.md
+└── assets/
+    └── template.pptx</code></pre>
+<p>其中只有 <code>SKILL.md</code> 是必须的。</p>
+<pre class="code-block"><code>---
+name: tech-article-writing
+description: 用于撰写 AI 产品、模型评测和科技行业相关文章
+---
+
+收到写作任务后：
+
+1. 先确认文章核心角度
+2. 查找一手资料
+3. 对核心事实交叉验证
+4. 根据用户写作风格完成初稿
+5. 检查禁用句式和 AI 味表达</code></pre>
+<p>还可以带上：</p>
+<pre class="code-block"><code>references/style.md</code></pre>
+<h3 id="h-skill-是怎么工作的">Skill 是怎么工作的</h3>
+<p>Skill 最关键的设计，其实不是 SKILL.md，而是 Progressive Disclosure，渐进式披露。</p>
+<p>假设你的 Agent 装了 100 个 Skill。</p>
+<p>它不会一上来把 100 个 Skill 的完整内容全部塞进上下文。这样不仅浪费 Token，还会让模型被大量无关指令干扰。</p>
+<p>标准做法分三层。</p>
+<p>第一层，Agent 启动时只看所有 Skill 的名称和 description。</p>
+<p>比如：</p>
+<pre class="code-block"><code>pptx
+处理 PowerPoint 创建、编辑、读取任务
+
+pdf
+处理 PDF 提取、合并、编辑、填写任务
+
+tech-article-writing
+撰写 AI 和科技行业文章</code></pre>
+<p>第二层，当用户说：</p>
+<pre class="code-block"><code>帮我写一篇 WorkBuddy 的公众号文章</code></pre>
+<p>Agent 根据 description 判断 <code>tech-article-writing</code> 可能相关，这时才加载完整的 <code>SKILL.md</code>。</p>
+<p>第三层，执行过程中发现需要模仿你的写作风格，才继续读取：</p>
+<pre class="code-block"><code>references/style.md</code></pre>
+<p>需要检查 AI 味，才执行：</p>
+<pre class="code-block"><code>scripts/check-ai-phrases.py</code></pre>
+<p>标准规范建议，所有 Skill 启动时只加载数十至上百Token的元数据，Skill 激活后再加载完整说明，其他资料和脚本继续按需读取。OpenAI Codex 也采用类似机制，先向模型暴露 Skill 的名称、描述和路径，再在模型决定使用时读取完整内容。</p>
+<p>所以 Skill 解决了一个长期困扰 Agent 的问题：</p>
+<p><strong>怎么给 Agent 很多知识和工作方法，又不把所有东西永远塞在 Prompt 里。</strong></p>
+<h3 id="h-skill-跟-prompt-到底有什么区别">Skill 跟 Prompt 到底有什么区别</h3>
+<p>这是最核心的问题。</p>
+<div class="table-wrap"><table><thead><tr><th>维度</th><th>Prompt</th><th>Skill</th></tr></thead><tbody><tr><td>核心作用</td><td>描述当前任务</td><td>定义一类任务怎么做</td></tr><tr><td>生命周期</td><td>通常针对一次请求</td><td>长期复用</td></tr><tr><td>触发方式</td><td>用户主动输入</td><td>Agent 自动选择或用户显式调用</td></tr><tr><td>载体</td><td>主要是文本</td><td>文件夹</td></tr><tr><td>内容</td><td>指令、上下文、示例</td><td>指令、脚本、资料、模板、资源</td></tr><tr><td>上下文占用</td><td>通常直接进入上下文</td><td>按需加载</td></tr><tr><td>复用</td><td>经常复制粘贴</td><td>原生可复用</td></tr><tr><td>分享</td><td>Prompt 文本</td><td>完整能力包</td></tr><tr><td>执行</td><td>本身只是指令</td><td>可以调用附带脚本和工具</td></tr><tr><td>模型参数</td><td>不改变</td><td>同样不改变</td></tr></tbody></table></div>
+<p>最简单的理解是：</p>
+<pre class="code-block"><code>Prompt = 任务
+Skill = 做法</code></pre>
+<h3 id="h-skill-有哪些作用">Skill 有哪些作用</h3>
+<p><strong>第一个作用，是给模型补充程序性知识。</strong>大模型往往知道大量知识，但未必知道你的事情具体应该怎么做，比如它知道 SQL，但它不知道你公司的：</p>
+<pre class="code-block"><code>canonical user_id 在哪张表
+subscriptions 表是 append-only
+查询退款时必须排除某个状态
+Grafana 对应 dashboard ID 是多少</code></pre>
+<p>这些知识非常适合做 Skill，Anthropic 在内部使用了数百个 Skill，最终发现主要集中在 API 和内部库使用、产品验证、数据分析、业务流程自动化、代码脚手架、代码审查、CI/CD、故障 Runbook 和基础设施运维九类场景。</p>
+<p><strong>第二个作用，是固定复杂工作流，</strong>比如做一次行业调研。</p>
+<p>普通 Prompt 可能是：</p>
+<pre class="code-block"><code>详细调研一下 WorkBuddy</code></pre>
+<p>模型每一次都会重新思考：</p>
+<pre class="code-block"><code>去哪里找资料
+先查什么
+怎么验证
+跟谁对比
+输出什么结构</code></pre>
+<p>Skill 可以把流程固定下来：</p>
+<pre class="code-block"><code>1. 官方网站
+2. 官方公众号和发布会
+3. 产品文档
+4. 实际产品测试
+5. 同类产品对比
+6. 核心观点提炼
+7. 事实核验</code></pre>
+<p>这种能力称为 Encoded Preference Skill。模型本来能完成每一个单独步骤，但 Skill 把这些步骤按照团队或个人的工作方式组织起来。</p>
+<p>另一类是 Capability Uplift Skill，给模型补充它原本做不好或不稳定的能力，例如复杂文档、PDF 和 PPT 处理。</p>
+<p><strong>第三个作用，是减少重复 Prompt。</strong></p>
+<p>你现在跟 AI 合作，其实有大量内容是在重复说，比如你经常告诉我：</p>
+<pre class="code-block"><code>不要写得太 AI
+长短句结合
+不要过度点列
+要有自己的判断
+技术内容要克制
+不要编造例子</code></pre>
+<p>这些其实已经天然适合做成一个 <code>writing-style</code> Skill。</p>
+<p>以后你的 Prompt 只需要：</p>
+<pre class="code-block"><code>写一篇 WorkBuddy 文章</code></pre>
+<p>写作习惯、资料标准、禁用表达、文章流程，都由 Skill 提供。</p>
+<p><strong>第四个作用，是把个人经验和组织经验资产化。</strong></p>
+<p>传统 Prompt 最大的问题是容易散落在：</p>
+<pre class="code-block"><code>聊天记录
+飞书文档
+Notion
+个人脑子里</code></pre>
+<p>Skill 是文件，所以它可以：</p>
+<pre class="code-block"><code>Git 管理
+版本回滚
+团队共享
+A/B 测试
+自动评测
+持续更新</code></pre>
+<p>这件事情很关键。</p>
+<h3 id="h-workbuddy里找到合适的skill">WorkBuddy里找到合适的Skill</h3>
+<p>打开左侧“专家·技能·连接器”，可以从技能市场搜索，也可以用“查找技能”描述需求。</p>
+<p><img src="assets/part1/ch05/001<em>image</em>TdcLblfvIo.png" alt="" loading="lazy"></p>
+<p>也可以在SkillHub技能市场里找到合适的Skill</p>
+<p><img src="assets/part1/ch05/002<em>image</em>V3E5bsVZGo.png" alt="" loading="lazy"></p>
+<p>除了从推荐列表里直接安装，还可以<strong>导入自己下载的技能</strong>。</p>
+<p>比如你在网上看到一个好用的技能包，下载下来是一个 zip 压缩文件，操作流程是这样的：点击"上传技能"，把 zip 文件加载即可</p>
+<p><img src="assets/part1/ch05/003<em>image</em>Oag3bNQHOo.png" alt="" loading="lazy"></p>
+<p><img src="assets/part1/ch05/004<em>image</em>GgOebNBh3o.png" alt="" loading="lazy"></p>
+<h3 id="h-使用skill解决一个任务">使用Skill解决一个任务</h3>
+<p>比如，你让AI写了一篇文章，需要去除AI味，你可以找到“文章去AI味工具 ”Skill，安装之后，使用时，直接 “/” 可以换出。</p>
+<p><img src="assets/part1/ch05/005<em>20260708200848</em>NN3hbPsKAo.gif" alt="" loading="lazy"></p>
+<p>你只需要引用Skill内容，把文章给到即可，</p>
+<p><img src="assets/part1/ch05/006<em>image</em>Xom2btXVZo.png" alt="" loading="lazy"></p>
+<p>WorkBuddy 会先加载skill的内容，</p>
+<p><img src="assets/part1/ch05/007<em>image</em>AmOVb1oGEo.png" alt="" loading="lazy"></p>
+<p>根据skill中的规则，来执行，比如要去除不是而是、双引号等内容，</p>
+<p><img src="assets/part1/ch05/008<em>image</em>FbpQbmSswo.png" alt="" loading="lazy"></p>
+<p>修改之后，可以得到结果，确实去除了AI味。</p>
+<p><img src="assets/part1/ch05/009<em>image</em>RhBKbRhgIo.png" alt="" loading="lazy"></p>
+<h3 id="h-skill的关闭和卸载">Skill的关闭和卸载</h3>
+<p>从全部技能中，点击我安装的</p>
+<p><img src="assets/part1/ch05/010<em>image</em>NGsdbBcjso.png" alt="" loading="lazy"></p>
+<p>按钮关闭（则关闭该Skill）</p>
+<p><img src="assets/part1/ch05/011<em>image</em>DABBb41fGo.png" alt="" loading="lazy"></p>
+<p>点击“···”，可以选择删除或编辑该Skill</p>
+<p><img src="assets/part1/ch05/012<em>image</em>Uya3bNC9io.png" alt="" loading="lazy"></p></div></section>
+<section class="chapter" id="ch06"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 6 章 WorkBuddy的专家和专家团</h2></div><div class="chapter-body"><h2 id="h-第-6-章-workbuddy的专家和专家团">第 6 章 WorkBuddy的专家和专家团</h2>
+<h3 id="h-专家和专家团与skill的区别">专家和专家团与Skill的区别</h3>
+<p>WorkBuddy 本身是一个通用 Agent，什么任务都能接。但通用不意味着每个领域都应该用同一种方式处理。</p>
+<p>比如，</p>
+<p>同样是分析一份销售数据，普通 Agent 可能会读取数据、生成图表、总结趋势。数据分析专家会先理解业务目标，再确定核心指标，检查数据质量，寻找异常变化，分析可能原因，最后给出可以执行的业务建议。</p>
+<p>同样是写一篇小红书文案，普通 Agent 可能更关注内容本身。小红书运营专家还会考虑选题、标题、开头留存、种草逻辑、平台内容生态和互动设计。</p>
+<p>专家定义为一种角色切换机制，通过人设、方法论和工具链，让 WorkBuddy 以特定领域专家的身份执行任务。</p>
+<p>最简单的理解是：</p>
+<p>普通 WorkBuddy = 通用 AI 同事</p>
+<p>专家 = 有明确岗位和专业经验的 AI 同事</p>
+<p>而专家团定义为一种协作执行机制。一个专家团由多位专家组成，由团长自动拆解任务、分配工作、并行执行，最后整合交付。</p>
+<p>用户只需要告诉团长客户背景、最新需求和预期成果，不需要自己挑选团员，也不需要自己拆分任务。团长会安排内容、活动、分析等成员协作，最后汇总完整方案。</p>
+<div class="table-wrap"><table><thead><tr><th>方式</th><th>本质</th><th>适合的问题</th></tr></thead><tbody><tr><td>普通任务</td><td>通用理解与执行</td><td>一次性的清楚任务</td></tr><tr><td>Skill</td><td>特定工具能力</td><td>需要稳定执行某个动作</td></tr><tr><td>专家</td><td>人设 + 方法论 + 工具链</td><td>明确领域的单点专业问题</td></tr><tr><td>专家团</td><td>多位专家 + 协作流程</td><td>需要拆解、并行、汇总的复杂项目</td></tr></tbody></table></div>
+<h3 id="h-召唤一位专家">召唤一位专家</h3>
+<ol class="doc-list"><li>打开“专家·技能·连接器”，选择“专家”；</li></ol>
+<p><img src="assets/part1/ch06/001<em>image</em>T8L2bOcbBo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>点击“召唤专家”；以“高考我帮你”专家举例</li></ol>
+<p><img src="assets/part1/ch06/002<em>image</em>TlTJbNIQOo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>提供任务内容，比如“帮我查一下2026年高考数学真题”</li></ol>
+<p><img src="assets/part1/ch06/003<em>image</em>Hfv9bPfcIo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>等待结果</li></ol>
+<h3 id="h-创建一位专家">创建一位专家</h3>
+<p>点击我的专家，创建专家，即可</p>
+<p><img src="assets/part1/ch06/004<em>20260708204254</em>Nvfjb5QwFo.gif" alt="" loading="lazy"></p>
+<p>比如创建一个公众号创作专家，</p>
+<p><img src="assets/part1/ch06/005<em>image</em>Bzc4b6Ukko.png" alt="" loading="lazy"></p>
+<p>生成结束，可以测试</p>
+<p><img src="assets/part1/ch06/006<em>image</em>Oz4wbqMTqo.png" alt="" loading="lazy"></p>
+<p>在我的专家中，也可以找到。</p>
+<p><img src="assets/part1/ch06/007<em>image</em>TDP4b0emBo.png" alt="" loading="lazy"></p>
+<h3 id="h-召唤一个专家团">召唤一个专家团</h3>
+<p>专家团由团长负责拆解和汇总，成员按角色并行或串行执行。任务开始前先确认：成员分工是否覆盖完整、哪些步骤依赖前一步、什么时候需要人来拍板、最终由谁整合。</p>
+<p>打开“专家·技能·连接器”，选择“专家团”，点击召唤</p>
+<p><img src="assets/part1/ch06/008<em>image</em>MHngbV84ro.png" alt="" loading="lazy"></p>
+<p><img src="assets/part1/ch06/009<em>image</em>LUaZbwcddo.png" alt="" loading="lazy"></p></div></section>
+<section class="chapter" id="ch07"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 7 章 WorkBuddy 使用连接器</h2></div><div class="chapter-body"><h2 id="h-第-7-章-workbuddy-使用连接器">第 7 章 WorkBuddy 使用连接器</h2>
+<p><strong>MCP</strong>指的是 <strong>Model Context Protocol（模型上下文协议），</strong>是由 Anthropic 于 2024 年底推出并开源的一个开放标准协议，目前已经成为 AI 领域最热门的基础设施之一。</p>
+<p>用一个通俗的比喻：<strong>MCP 就是 AI 世界的“USB-C 接口”。</strong></p>
+<h3 id="h-为什么需要-mcp">为什么需要 MCP？</h3>
+<p>在过去，如果你想让一个 AI 助手（Agent）连接外部工具（比如 GitHub、本地文件系统、PostgreSQL 数据库、Slack 等），开发者必须为“每一个 AI 应用”和“每一个工具”编写专门的对接代码。如果有 10 个 AI 应用和 10 个工具，就需要写 100 个接口（N × M 的集成噩梦）。</p>
+<p>有了 MCP，工具开发者只需要按照 MCP 标准开发一个“MCP Server”（相当于 USB-C 设备），而任何支持 MCP 的 AI 应用（如 Cursor、各类 Agent 框架）只需内置“MCP Client”（相当于 USB-C 接口），就能<strong>即插即用</strong>。这就把 N × M 的复杂开发工作，简化成了 N + M。</p>
+<h3 id="h-mcp-的核心特点">MCP 的核心特点</h3>
+<ul class="doc-list"><li>统一的标准化协议（告别重复造轮子）</li></ul>
+<p>MCP 提供了一套通用的规范（基于 JSON-RPC）。无论是读取本地文件、查询数据库，还是调用第三方 SaaS API，AI 都能通过同一套协议逻辑去理解和调用。这大幅降低了 Agent 开发中工具集成的门槛，让开发者可以把精力集中在 Agent 的核心逻辑上，而不是写繁琐的 API 对接代码。</p>
+<ul class="doc-list"><li>支持三大核心能力</li></ul>
+<p>MCP 不仅能让 AI “做事”，还能让 AI “看数据”和“按套路出牌”，它标准化了三种核心原语：</p>
+<ul class="doc-list"><li><strong>Tools（工具）</strong>：允许 AI 执行操作。例如：运行一段代码、在 Jira 创建一个任务、向数据库写入数据。</li><li><strong>Resources（资源/上下文）</strong>：允许 AI 读取外部数据。例如：获取 Git 仓库的文件列表、查询向量数据库中的特定片段，作为回答问题的上下文。</li><li><strong>Prompts（提示词模板）</strong>：提供预定义的交互模板，让用户或 AI 能以标准化的方式触发特定的复杂工作流。</li></ul>
+<ul class="doc-list"><li>C/S 架构与高度解耦，MCP 采用客户端-服务端（Client-Server）架构：</li></ul>
+<ul class="doc-list"><li><strong>MCP Host</strong>：你使用的 AI 宿主应用（如 IDE、Agent 平台）。</li><li><strong>MCP Client</strong>：Host 内部负责与 Server 保持 1:1 连接的组件。</li><li><strong>MCP Server</strong>：轻量级的独立程序，专门负责暴露特定工具或数据的能力。</li></ul>
+<p>这种解耦意味着你可以随时替换底层的大模型，或者随时增加新的数据源，而无需重构整个 Agent 系统。</p>
+<ul class="doc-list"><li>本地优先与安全性（隐私友好）</li></ul>
+<p>MCP 支持通过本地标准输入输出（stdio）或本地 HTTP 进行通信。这意味着你的 MCP Server 可以完全运行在本地电脑上。敏感数据（如本地代码、私有数据库内容、电商后台数据）不需要上传到云端第三方服务器，AI 模型只在需要推理时获取必要的上下文，极大提升了企业级应用的数据安全性。</p>
+<h3 id="h-加载一个连接器">加载一个连接器</h3>
+<p><strong>当前已支持 QQ 邮箱、腾讯文档、腾讯乐享、腾讯会议、TAPD 等连接器。</strong></p>
+<p><img src="assets/part1/ch07/001<em>image</em>IZzfbK38Ao.png" alt="" loading="lazy"></p>
+<p>比如加载腾讯会议连接器，</p>
+<p><img src="assets/part1/ch07/002<em>image</em>WF3ab0WSbo.png" alt="" loading="lazy"></p>
+<p><img src="assets/part1/ch07/003<em>image</em>ZssEbuMsdo.png" alt="" loading="lazy"></p>
+<h3 id="h-创建一个任务">创建一个任务</h3>
+<p>帮我创建一个明天下午 3 点的会议，</p>
+<p><img src="assets/part1/ch07/004<em>image</em>KVIJbpUZdo.png" alt="" loading="lazy"></p>
+<p>主题“项目讨论”，时长1h</p>
+<p><img src="assets/part1/ch07/005<em>image</em>FPy1bGJJZo.png" alt="" loading="lazy"></p>
+<p>创建成功</p>
+<p><img src="assets/part1/ch07/006<em>image</em>WQ6Zb1Rero.png" alt="" loading="lazy"></p>
+<h3 id="h-新建连接器">新建连接器</h3>
+<p>连接器管理页右上角点“自定义连接器”，按引导配置 MCP（含服务地址、鉴权方式），并提示自定义连接器的访问范围由用户配置</p>
+<p><img src="assets/part1/ch07/007<em>image</em>M2itbQUceo.png" alt="" loading="lazy"></p></div></section>
+<section class="chapter" id="ch08"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 8 章 WorkBuddy 接入小程序与 IM 助理</h2></div><div class="chapter-body"><h2 id="h-第-8-章-workbuddy-接入小程序与-im-助理">第 8 章 WorkBuddy 接入小程序与 IM 助理</h2>
+<h3 id="h-小程序的两种模式">小程序的两种模式</h3>
+<p><img src="assets/part1/ch08/001<em>image</em>Vv5bbtLVBo.png" alt="" loading="lazy"></p>
+<div class="table-wrap"><table><thead><tr><th>模式</th><th>任务在哪里运行</th><th>是否依赖电脑在线</th><th>适合任务</th></tr></thead><tbody><tr><td>本机模式</td><td>已连接的电脑</td><td>是</td><td>本地文件、本地 Skill、已有工作区</td></tr><tr><td>云端模式</td><td>隔离的云端环境</td><td>否</td><td>调研、写作、临时分析、并行任务</td></tr></tbody></table></div>
+<p><strong>首次使用</strong></p>
+<ol class="doc-list"><li>通过官方入口打开 WorkBuddy 小程序并登录；</li><li>查看当前处于本机还是云端模式；</li><li>本机模式下确认目标电脑在线且连接正确；</li></ol>
+<h3 id="h-im-助理的工作链路">IM 助理的工作链路</h3>
+<div class="mermaid">sequenceDiagram
+    participant U as 手机 IM
+    participant B as 应用机器人
+    participant W as WorkBuddy 助理
+    participant P as 本机工作区
+    U-&gt;&gt;B: 发送任务
+    B-&gt;&gt;W: 回调或长连接传递消息
+    W-&gt;&gt;P: 在授权目录执行
+    P--&gt;&gt;W: 产物与状态
+    W--&gt;&gt;B: 返回结果
+    B--&gt;&gt;U: 手机查看与确认</div>
+<h3 id="h-接入微信助理-扫码绑定即可">接入微信助理：扫码绑定即可</h3>
+<ol class="doc-list"><li>打开 WorkBuddy，在左侧“助理”栏点击齿轮，进入“助理设置”；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>找到“微信助理集成”，点击“配置”；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>等待绑定二维码生成，用手机微信扫码；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>卡片显示“已绑定”后，先发送一条只读测试指令；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>需要切换微信账号时，先解绑当前账号，再重新扫码。</li></ol>
+<p>二维码有时效限制。停留在“绑定中”、二维码过期或扫码失败时，关闭配置窗口后重新进入，必要时重启 WorkBuddy 并重新生成二维码。</p>
+<p><em><strong>来源：WorkBuddy 官方指南。</strong></em></p>
+<h3 id="h-接入飞书">接入飞书</h3>
+<ol class="doc-list"><li>WorkBuddy → 设置 → 助理设置 → 选择飞书；</li></ol>
+<p><img src="assets/part1/ch08/006<em>image</em>SbcEbSaoio.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>在飞书开放平台创建企业自建应用；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>为应用添加机器人能力；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>按 WorkBuddy 当前页面要求开通最小权限；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>在“凭证与基础信息”获取 App ID 和 App Secret；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>将凭证填写到 WorkBuddy，生成或复制回调信息；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>在飞书配置事件订阅与回调；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>添加接收消息、卡片交互等当前指南要求的事件；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>创建版本并发布应用；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>在飞书内向机器人发送只读测试任务。</li></ol>
+<p><em><strong>来源：WorkBuddy 官方指南。</strong></em></p>
+<h3 id="h-接入钉钉">接入钉钉</h3>
+<p><img src="assets/part1/ch08/015<em>image</em>RRhMbPo5uo.png" alt="" loading="lazy"></p>
+<ol class="doc-list"><li>创建应用与机器人使用企业管理员账号登录钉钉开发者后台；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>进入“应用开发”，创建应用；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>为应用添加机器人能力，填写机器人名称、描述和头像并确认发布；</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<ol class="doc-list"><li>优先在测试组织或测试群完成验证。</li></ol>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<p><em><strong>来源：WorkBuddy 官方指南。</strong></em></p></div></section>
+<section class="chapter" id="ch09"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 9 章 如何接入外部 API</h2></div><div class="chapter-body"><h2 id="h-第-9-章-如何接入外部-api">第 9 章 如何接入外部 API</h2>
+<p>你也许没有积分，但是你有自己的LLM API，</p>
+<p>WorkBuddy支持接入其他 LLM 的 API，以及 Coding Plan、Token Plan 等套餐。</p>
+<p>直接从设置中进入，</p>
+<p><img src="assets/part1/ch09/001<em>image</em>CaRmbk2N1o.png" alt="" loading="lazy"></p>
+<p>选择模型选项，</p>
+<p><img src="assets/part1/ch09/002<em>image</em>PQxNb3id8o.png" alt="" loading="lazy"></p>
+<p>点击添加模型，</p>
+<p><img src="assets/part1/ch09/003<em>image</em>De1fbH0Gho.png" alt="" loading="lazy"></p>
+<p>可以选择各种coding plan或者自定义的api</p>
+<p><img src="assets/part1/ch09/004<em>image</em>Fa7pb60ARo.png" alt="" loading="lazy"></p>
+<p>比如，DeepSeek，你只需要输入api key即可，</p>
+<p><img src="assets/part1/ch09/005<em>image</em>W9u5bNsaMo.png" alt="" loading="lazy"></p>
+<p>或者接入本地ollama模型，需先本地启动 Ollama（默认端口 11434，OpenAI 兼容接口），本地模型优势为数据不出本机、可离线、零 Token 成本。</p>
+<p><img src="assets/part1/ch09/006<em>image</em>BSnBbYupuo.png" alt="" loading="lazy"></p></div></section>
+<section class="chapter" id="ch10"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">第 10 章 WorkBuddy 自动化任务</h2></div><div class="chapter-body"><h2 id="h-第-10-章-workbuddy-自动化任务">第 10 章 WorkBuddy 自动化任务</h2>
+<p>真正消耗人的，往往不是那些需要创造力的大任务，而是每天都要打开同样的页面、收集相似的信息、整理成同一种格式，再把结果发给同一批人。WorkBuddy 自动化的价值，就是把这些“时间固定、步骤相似、结果可检查”的工作变成可重复运行的 Agent 任务。</p>
+<h3 id="h-为什么-workbuddy-可以自动化">为什么 WorkBuddy 可以自动化</h3>
+<p>传统自动化通常要求人先把每一个步骤写成代码：打开哪个系统、点击哪个按钮、读取哪一列、遇到异常怎么分支。</p>
+<p>WorkBuddy 的不同之处，是把“定时调度”与 Agent 的理解、工具调用和文件处理能力组合起来。你不必把所有细节都写成程序，但需要把目标、输入、边界和结果说清楚。</p>
+<p>自动化配置保存在本地客户端，包括任务名称、提示词、调度规则、工作目录和执行状态。到达设定时间后，WorkBuddy 会沿用当前登录身份发起 Agent 任务，并按提示词调用模型、Skill、MCP 或连接器，在指定工作目录完成查询、汇总和文件处理。</p>
+<p>真正让任务稳定运行的是五个要素：明确的触发时间、可重复的输入来源、足够具体的 Prompt、固定且受控的工作目录，以及能够判断成功或失败的验收条件。</p>
+<h3 id="h-自动化能用来做什么">自动化能用来做什么</h3>
+<p>最直观的用途是把每天、每周、每月都要重复的工作交给 WorkBuddy。价值不只在于少点几次鼠标，而在于任务不会因为忙碌而被遗忘，执行方法也不会随着不同的人临时变化。</p>
+<div class="table-wrap"><table><thead><tr><th>场景</th><th>可以自动完成</th><th>典型产物</th></tr></thead><tbody><tr><td>资讯与情报</td><td>定时搜索行业新闻、政策、竞品动态，去重后摘要</td><td>每日简报、风险提示、来源清单</td></tr><tr><td>日报与周报</td><td>汇总任务、日历、文档和数据变化，按固定结构生成报告</td><td>日报、周报、项目进度表</td></tr><tr><td>数据与表格</td><td>收集文件、合并表格、清洗字段、检查缺失和异常</td><td>对账表、异常清单、趋势图</td></tr><tr><td>文件管理</td><td>按日期和项目归档、批量重命名、抽取 PDF 或图片文字</td><td>归档目录、索引、处理日志</td></tr><tr><td>内容运营</td><td>收集选题、生成标题候选、整理素材、制作发布草稿</td><td>选题库、内容草稿、封面需求单</td></tr><tr><td>知识管理</td><td>定时整理收藏、会议纪要和灵感，补标签与来源</td><td>知识卡片、每周回顾、待消化列表</td></tr><tr><td>产品与研发</td><td>巡检日志、汇总 issue、检查依赖和构建结果</td><td>巡检报告、缺陷摘要、升级建议</td></tr><tr><td>个人事务</td><td>生成学习计划、阶段复盘、预约或提醒类任务</td><td>学习清单、提醒、执行记录</td></tr></tbody></table></div>
+<h3 id="h-什么样的任务适合先自动化">什么样的任务适合先自动化</h3>
+<p>可以用下面六个问题做判断。回答“是”越多，越适合作为第一批自动化任务：</p>
+<ol class="doc-list"><li><strong>会重复吗</strong>：至少每周发生一次，而不是一次性需求；</li><li><strong>输入稳定吗</strong>：文件夹、网页、表格或连接器来源相对固定；</li><li><strong>步骤相似吗</strong>：虽然内容变化，但处理方式基本一致；</li><li><strong>结果可验收吗</strong>：能检查条数、字段、时间范围、来源或文件是否生成；</li><li><strong>失败可恢复吗</strong>：失败后可以重跑，不会立即造成不可逆损失；</li><li><strong>权限可控制吗</strong>：可以限定工作目录、账号和允许调用的工具。</li></ol>
+<p>最适合的起点，通常不是“替我运营整个公司”，而是“每天 8 点收集 10 条 AI 行业新闻，去重、保留链接，生成 Markdown 简报到指定目录”。范围越清楚，越容易发现问题并逐步改进。</p>
+<h3 id="h-从一句想法到可运行任务">从一句想法到可运行任务</h3>
+<p>创建自动化前，先把口头需求改写成一份小型任务说明。一个可靠的 Prompt 至少要回答：何时执行、读取什么、怎样处理、输出到哪里、怎样算完成、失败后怎么办、哪些动作禁止执行。</p>
+<pre class="code-block"><code>任务名称：每日 AI 行业简报
+触发时间：每天 08:00，时区 Asia/Shanghai
+工作目录：automation/ai-daily
+
+输入：
+- 检索过去 24 小时的 AI 产品、模型和行业新闻
+- 仅使用可以访问并保留链接的公开来源
+
+处理规则：
+1. 合并重复事件，按产品、技术、商业三类整理
+2. 每条包含标题、100 字摘要、来源、发布时间和链接
+3. 无法确认发布时间或来源的内容放入“待核验”，不要编造
+
+输出：
+- 保存为 YYYY-MM-DD-ai-daily.md
+- 正文最多 10 条，最后附来源清单</code></pre>
+<h3 id="h-创建一项自动化任务">创建一项自动化任务</h3>
+<p>在 WorkBuddy 打开“自动化”页面，可以查看已安排任务和历史执行记录。点击“添加”后，需要配置任务名称、工作空间、提示词、模型与技能、定时规则，以及是否把完成结果推送到 WorkBuddy 小程序。</p>
+<div class="table-wrap"><table><thead><tr><th>配置项</th><th>作用</th><th>填写建议</th></tr></thead><tbody><tr><td>名称</td><td>区分不同自动化任务</td><td>写清对象和频率，如“每日 AI 简报”</td></tr><tr><td>工作空间</td><td>限定执行目录和文件保存位置</td><td>为每项自动化使用独立目录，避免互相覆盖</td></tr><tr><td>提示词</td><td>描述目标、步骤、输出和边界</td><td>使用上面的任务模板，不只写一句口号</td></tr><tr><td>模型和技能</td><td>决定可用的理解与执行能力</td><td>只选择任务真正需要的 Skill 和连接器</td></tr><tr><td>定时规则</td><td>设置频率和生效日期</td><td>先低频试运行，再逐步提高频率</td></tr><tr><td>推送到小程序</td><td>完成后在手机查看结果</td><td>开启前确认哪些结果会通过安全链路同步到云端</td></tr></tbody></table></div>
+<p>点击“自动化”，</p>
+<p><img src="assets/part1/ch10/001<em>image</em>RklAba93No.png" alt="" loading="lazy"></p>
+<p>“添加自动化”，就可以自定义你的任务</p>
+<p><img src="assets/part1/ch10/002<em>image</em>MhojbPRsOo.png" alt="" loading="lazy"></p>
+<p>比如，每日AI资讯新闻推送，定时8点发送</p>
+<p><img src="assets/part1/ch10/003<em>image</em>Ff6fbYuGoo.png" alt="" loading="lazy"></p>
+<h3 id="h-不想从零写-prompt-可以先用模板">不想从零写 Prompt，可以先用模板</h3>
+<p>官方任务模板覆盖新闻推送、周报生成、体检预约和学习计划等常见场景。模板的价值是提供基本字段和任务结构，但它不是最终答案。选用后仍应修改数据来源、时间范围、输出位置、验收标准和禁止动作。</p>
+<p><div class="img-missing">🖼️ 示意图</div></p>
+<h3 id="h-更多值得尝试的自动化场景">更多值得尝试的自动化场景</h3>
+<div class="table-wrap"><table><thead><tr><th>任务</th><th>触发方式</th><th>建议保留的人工检查</th></tr></thead><tbody><tr><td>周报汇总</td><td>每周五读取本周任务、日历和交付文件</td><td>确认进度和风险表述后再发送</td></tr><tr><td>销售日报</td><td>每天汇总 CRM 或表格中的新增客户与跟进记录</td><td>核对金额、客户状态和负责人</td></tr><tr><td>费用与发票整理</td><td>每月读取指定目录中的票据和报销表</td><td>财务提交前核对税额、重复票据和归属</td></tr><tr><td>自媒体选题雷达</td><td>每天收集热点、行业话题和评论区问题</td><td>人工判断品牌立场和是否追热点</td></tr><tr><td>知识库周回顾</td><td>每周整理新增笔记、收藏和会议纪要</td><td>确认分类、来源和是否值得长期保留</td></tr><tr><td>项目风险巡检</td><td>每天检查延期任务、构建结果和错误日志</td><td>严重告警交由负责人确认处置</td></tr><tr><td>竞品价格监控</td><td>定时读取公开页面或授权 API</td><td>页面结构变化时暂停并修复解析规则</td></tr><tr><td>学习计划复盘</td><td>每天提醒，周末汇总完成情况</td><td>根据真实精力调整下周计划</td></tr></tbody></table></div></div></section>
+<section class="chapter" id="ch-extra"><div class="chapter-head"><span class="chapter-badge">PART 01</span><h2 class="chapter-title">课外阅读：一章看懂 AI 工作系统</h2></div><div class="chapter-body"><h2 id="h-课外阅读-一章看懂-ai-工作系统">课外阅读：一章看懂 AI 工作系统</h2>
+<h3 id="h-先看全景-一次-ai-任务里发生了什么">先看全景：一次 AI 任务里发生了什么</h3>
+<div class="mermaid">flowchart LR
+    U[用户目标与资料] --&gt; A[Agent 规划]
+    A --&gt; L[LLM 理解与生成]
+    A --&gt; S[Skill 方法与脚本]
+    A --&gt; T[Tool / Connector]
+    T --&gt; M[MCP / API]
+    M --&gt; X[文件、知识库与业务系统]
+    L --&gt; R[中间结果]
+    S --&gt; R
+    X --&gt; R
+    R --&gt; C[检查点与验收]
+    C --&gt; O[最终产物]</div>
+<p>这张图可以用一句话解释：<strong>模型负责理解和生成，Agent 负责围绕目标组织行动，Skill 提供专业方法，工具与 MCP/API 让行动触达真实世界，人负责边界与验收。</strong></p>
+<p>把一次真实任务拆开看，信息大致这样流动：</p>
+<p>你提出一个目标 → Agent 把它拆成几步 → 遇到专业子任务就加载对应的 Skill，遇到要碰外部系统就调用工具 → 工具通过 MCP 或 API 真正读写数据库、发消息、改文件 → 结果回到模型，模型判断下一步 → 你做边界把控和最终验收。</p>
+<p>五类角色里，<strong>模型是大脑，Agent 是调度员，Skill 是专家手册，工具与接口是手脚，人是裁判</strong>。后面每一节就是把其中一个角色讲清楚，顺便标出它能和不能的边界。</p>
+<h3 id="h-llm-会根据上下文预测内容的基础模型">LLM：会根据上下文预测内容的基础模型</h3>
+<p>LLM 是 Large Language Model，大语言模型。它从大量数据中学习语言和知识模式，根据当前输入生成最可能的后续内容。</p>
+<p>它本质上是个「预测下一个内容」的引擎，不是数据库，也不是会替你负责的人。</p>
+<h4 id="h-它擅长什么">它擅长什么</h4>
+<ul class="doc-list"><li>理解、归纳和改写文本；</li><li>从材料中提取结构；</li><li>生成草稿、方案和代码；</li><li>根据示例模仿格式和风格；</li><li>在工具返回结果后继续分析。</li></ul>
+<h4 id="h-它不天然保证什么">它不天然保证什么</h4>
+<ul class="doc-list"><li>不保证每个事实都正确；</li><li>不知道企业最新内部状态，除非提供资料或连接系统；</li><li>不会因为语言自信就拥有真实证据；</li><li>不自动拥有文件、账号、数据库和网络权限；</li><li>不承担业务和法律责任。</li></ul>
+<h4 id="h-为什么会-幻觉">为什么会「幻觉」</h4>
+<p>模型的目标是生成连贯内容，不是内置事实数据库。当资料缺失、问题含糊或要求它给出确定答案时，它可能用合理但不真实的内容填补空白。</p>
+<p>这不是 bug，是「按概率补全」这件事的副作用。理解了这点，你就不会再追问「它明明说得很肯定，为什么是错的」——肯定和正确是两件事。</p>
+<h4 id="h-降低幻觉的办法">降低幻觉的办法</h4>
+<ul class="doc-list"><li>提供可靠资料；</li><li>要求引用位置（说清楚结论来自哪段材料）；</li><li>允许回答「无法确认」；</li><li>把事实提取与建议生成分开；</li><li>对高影响结论人工复核。</li></ul>
+<h3 id="h-token-与上下文窗口-模型眼前能看到多少">Token 与上下文窗口：模型眼前能看到多少</h3>
+<p>Token 是模型处理文本的基本单位，不完全等于字数。中文里一个字可能对应一个或几个 Token，代码和标点也单独计费。上下文窗口是一次推理中模型能够处理的输入、历史对话和输出总量。</p>
+<p>把 Token 想成模型的短期记忆容量：装得下才看得见，装不下就得丢或压缩。</p>
+<h4 id="h-上下文变长不一定更好">上下文变长不一定更好</h4>
+<p>把所有文件和几个月对话都塞进一个任务，可能导致：</p>
+<ul class="doc-list"><li>旧要求与新要求冲突；</li><li>关键资料被大量无关内容淹没；</li><li>成本和等待时间增加；</li><li>模型引用了过期版本。</li></ul>
+<p>窗口越大，越容易「水漫金山」——重要的反而被冲淡。</p>
+<h4 id="h-更稳妥的做法">更稳妥的做法</h4>
+<p>按项目整理「当前规则、已确认事实、决策记录和本次输入」，长项目使用文件和项目记忆，而不是依赖无限对话。</p>
+<p>简单说：<strong>别把所有聊天记录当数据库用</strong>，该落盘的落盘，该分项目的分开。</p>
+<h3 id="h-prompt-任务说明-不是神秘咒语">Prompt：任务说明，不是神秘咒语</h3>
+<p>Prompt 是给模型或 Agent 的输入，包括目标、背景、资料、约束、示例和输出要求。好的 Prompt 不以长度取胜，而以信息是否足够执行和验收取胜。</p>
+<p>写 Prompt 不是在「念咒」，是在写一份能交给同事执行的任务单。</p>
+<h4 id="h-六要素">六要素</h4>
+<div class="table-wrap"><table><thead><tr><th>要素</th><th>要回答的问题</th></tr></thead><tbody><tr><td>目标</td><td>最终解决什么问题</td></tr><tr><td>输入</td><td>使用哪些资料或系统</td></tr><tr><td>动作</td><td>分析、整理、生成还是写入</td></tr><tr><td>约束</td><td>不能做什么，采用什么规则</td></tr><tr><td>输出</td><td>交付什么文件或结构</td></tr><tr><td>验收</td><td>怎样判断正确和可用</td></tr></tbody></table></div>
+<p>六要素里最容易被忽略的是「验收」：没有验收标准，模型只能按自己的理解交差，你也就没法说它错在哪。</p>
+<h4 id="h-prompt-任务卡与-sop">Prompt、任务卡与 SOP</h4>
+<ul class="doc-list"><li><strong>Prompt</strong>：本次怎么说；</li><li><strong>任务卡</strong>：同类任务可以填写的结构；</li><li><strong>SOP</strong>：固定步骤、角色、检查点和异常处理；</li><li><strong>Skill</strong>：把稳定 SOP、脚本和资源封装成可执行能力。</li></ul>
+<p>四者是从「一次性说明」到「可复用能力」的逐级固化。</p>
+<p><strong>不是每个 Prompt 都值得变成 Skill。</strong> 先重复成功，再逐步固化。一个只做过一次的任务，先写好 Prompt 跑通；跑顺三五次、模式稳定了，再考虑沉淀成 Skill。</p>
+<h3 id="h-agent-能围绕目标循环行动的执行体">Agent：能围绕目标循环行动的执行体</h3>
+<p>Agent 不只是「回答一次」，而是持续执行一个循环：<strong>理解目标、观察环境、决定下一步、调用工具、读取结果、修正计划，直到交付或触发停止条件。</strong></p>
+<div class="mermaid">flowchart TD
+    A[接收目标] --&gt; B[观察资料与状态]
+    B --&gt; C[规划下一步]
+    C --&gt; D[调用工具执行]
+    D --&gt; E[读取结果与错误]
+    E --&gt; F{完成或应暂停？}
+    F --&gt;|继续| B
+    F --&gt;|暂停| G[请求人工确认]
+    F --&gt;|完成| H[交付并验收]</div>
+<p>聊天模型是「你问一句它答一句」；Agent 是「你给目标，它自己一步步推进，中途还会看结果、改路线」。</p>
+<h4 id="h-agent-与聊天模型的区别">Agent 与聊天模型的区别</h4>
+<div class="table-wrap"><table><thead><tr><th>维度</th><th>聊天模型</th><th>Agent</th></tr></thead><tbody><tr><td>核心动作</td><td>生成回答</td><td>规划、调用工具、执行和交付</td></tr><tr><td>工作对象</td><td>当前对话</td><td>文件、工具、系统和任务状态</td></tr><tr><td>过程</td><td>通常一次生成</td><td>多轮观察与行动</td></tr><tr><td>风险</td><td>内容错误</td><td>内容错误 + 真实操作影响</td></tr><tr><td>控制</td><td>提示与复核</td><td>权限、检查点、日志和回滚</td></tr></tbody></table></div>
+<p>关键差异在最后一行：聊天模型说错了，最多误导你；Agent 做错了，可能真的删了文件、发了邮件、改了数据库。所以 Agent 需要的不是更聪明的提示，而是更硬的护栏。</p>
+<h4 id="h-agent-的停止条件">Agent 的停止条件</h4>
+<p>好的 Agent 不应「永远想办法继续」。出现以下情况，应暂停并请求人处理：</p>
+<ul class="doc-list"><li>关键输入缺失；</li><li>目标冲突；</li><li>权限不足；</li><li>成本超预算；</li><li>动作不可逆；</li><li>结果无法验收。</li></ul>
+<p>知道什么时候停下来问人比 什么都自己硬扛 更专业。一个不会停的 Agent，比一个笨 Agent 更危险。</p>
+<h3 id="h-tool-让-agent-真的能做事">Tool ：让 Agent 真的能做事</h3>
+<p>Tool 是 Agent 可以调用的具体能力，例如读取文件、执行搜索、生成表格或发送消息。Connector 通常是产品已经封装好的第三方服务连接，强调授权后直接使用。</p>
+<h4 id="h-模型知道不等于模型能做">模型知道不等于模型能做</h4>
+<p>模型可以解释「如何发送邮件」，但只有获得邮件工具和账号权限后才能实际创建草稿或发送。模型可以写 SQL，但只有数据库工具、网络和账号允许时才能查询。</p>
+<p>这点是普通用户最容易误解的：<strong>模型「懂」一件事，不代表它「能」做这件事。</strong> 能不能做，取决于有没有对应的工具、权限和连接。任务失败时，先问「工具通没通、权限给没给」，而不是「模型是不是不行」。</p>
+<h4 id="h-每个工具要问五件事">每个工具要问五件事</h4>
+<ol class="doc-list"><li>使用谁的身份；</li><li>能读取什么；</li><li>能修改什么；</li><li>数据会发到哪里；</li><li>失败后如何停止和回退。</li></ol>
+<h3 id="h-skill-可复用的专业工作方法">Skill：可复用的专业工作方法</h3>
+<p>Skill 不是更聪明的模型，而是把某类任务需要的说明、脚本、知识和模板组织起来，让 Agent 更稳定地完成动作。</p>
+<p>Skill 的价值不在「让模型变强」，而在「把容易做错、容易遗漏的环节固定下来」。同样的发票处理，让模型每次现写，十次可能有三种写法；写成 Skill，十次走同一条被验证过的路。</p>
+<h4 id="h-一个-skill-可能包含">一个 Skill 可能包含</h4>
+<pre class="code-block"><code>invoice-skill/
+├── SKILL.md          # 触发条件、步骤、边界与输出
+├── references/       # 字段、分类和业务规则
+├── scripts/          # OCR、校验、表格处理
+├── templates/        # Excel 和报告模板
+└── tests/            # 正常与异常样例</code></pre>
+<p>SKILL.md 是入口，告诉 Agent「什么时候用我、怎么用、边界在哪」；references 放业务知识；scripts 放真正执行的代码；templates 保证输出格式一致；tests 保证异常情况也被覆盖。</p>
+<h4 id="h-skill-与-prompt-的区别">Skill 与 Prompt 的区别</h4>
+<p>Prompt 往往只影响本次对话；Skill 可以被不同任务调用，并能携带脚本、资源和稳定流程。但 Skill 仍可能出错，也可能请求本地、网络或第三方权限。</p>
+<p>记住：<strong>Skill 是「方法封装」，不是「能力保证」。</strong> 装了 Skill，Agent 更可能走对路，但不等于永远不会出错。</p>
+<h4 id="h-安装第三方-skill-的风险">安装第三方 Skill 的风险</h4>
+<ul class="doc-list"><li>读取不必要的本地目录；</li><li>外发输入材料；</li><li>获取 API Key 或账号；</li><li>执行系统命令；</li><li>包含恶意提示或代码；</li><li>依赖过期、无人维护。</li></ul>
+<p>因此应检查来源、代码、权限、网络、凭证、成本和停用方法，并先在隔离目录测试。第三方 Skill 和装浏览器插件一个道理：方便，但要先看它要什么权限。</p>
+<h3 id="h-mcp-让-ai-接入工具与数据的标准接口">MCP：让 AI 接入工具与数据的标准接口</h3>
+<p>MCP 是 Model Context Protocol。它规定 AI 客户端如何发现和调用外部工具、读取资源或获取提示模板，可以理解为 AI 工具生态的一类标准接口。</p>
+<p>把 MCP 想成「AI 世界的 USB 接口」：工具提供方按一套标准暴露能力，AI 客户端按同一套标准去用，不用每家重新适配。</p>
+<h4 id="h-mcp-解决什么">MCP 解决什么</h4>
+<p>如果每个 AI 产品都要为每个系统开发一套专用连接，集成成本很高。MCP 让工具提供方和 AI 客户端按统一方式描述能力，降低重复适配。</p>
+<p>没有 MCP 时，接一个 CRM 要写一套适配，接一个数据库又写一套；有了 MCP，工具方一次性按标准暴露，所有支持 MCP 的客户端都能直接用。</p>
+<h4 id="h-mcp-不解决什么">MCP 不解决什么</h4>
+<ul class="doc-list"><li>不自动判断数据是否合规；</li><li>不替你保管好所有密钥；</li><li>不保证工具结果正确；</li><li>不自动实现身份与最小权限；</li><li>不等于连接后可以开放生产写入。</li></ul>
+<p>MCP 解决的是「怎么连」，不解决「连了之后安不安全、对不对」。安全那层仍然是你的责任。</p>
+<h4 id="h-用户级与项目级">用户级与项目级</h4>
+<ul class="doc-list"><li><strong>用户级</strong>适合多个项目复用的公共能力；</li><li><strong>项目级</strong>适合客户、数据库或业务专属工具。</li></ul>
+<p>敏感连接优先项目隔离，避免跨项目误调用。比如公司的生产数据库，只该在对应项目里接，别放成全局用户级，否则另一个无关任务也可能摸到它。</p>
+<h3 id="h-api-与-mcp-的关系">API 与 MCP 的关系</h3>
+<p>API 是软件之间交互的接口，例如通过 HTTP 查询数据或创建记录。MCP Server 可以在内部调用一个或多个 API，再以 Agent 更容易使用的方式暴露工具。</p>
+<p>一句话：<strong>API 是地基，MCP 是在地基上盖的、Agent 能直接进出的门。</strong> Agent 通常不直接跟一堆原始 API 打交道，而是通过一个 MCP Server 间接调用它们。</p>
+<h4 id="h-直接用-api-还是用-mcp">直接用 API 还是用 MCP</h4>
+<ul class="doc-list"><li><strong>直接使用 API</strong> 更灵活，但需要理解认证、参数、错误和限流；</li><li><strong>使用成熟 MCP</strong> 更方便，但仍要审查它封装了什么请求和权限。</li></ul>
+<p>方便不等于免审。MCP 帮你省了适配活，但「它背后到底调了什么 API、用了什么权限」你得心里有数。</p>
+<h3 id="h-知识库-rag-与记忆">知识库、RAG 与记忆</h3>
+<p>这三者都和「AI 依据什么」有关，但保存的东西和失效方式完全不同。</p>
+<h4 id="h-知识库">知识库</h4>
+<p>保存可检索的制度、产品、案例、SOP 和其他资料。它解决「AI 依据什么」，不等于 AI 永远记住一切。</p>
+<p>知识库是external 的资料室，模型用时才去翻，翻完不保证下次还记。</p>
+<h4 id="h-rag">RAG</h4>
+<p>RAG 是 Retrieval-Augmented Generation，检索增强生成。系统先从资料库找到相关片段，再把片段提供给模型回答。效果取决于资料质量、分段、元数据、检索和引用。</p>
+<p>RAG 不是「接了知识库就聪明」，它是一根链条：资料差、切得烂、检索偏，回答就跟着歪。引用机制很重要——能指出结论来自哪段，你才能判断信不信。</p>
+<h4 id="h-记忆">记忆</h4>
+<p>记忆用于保存偏好、长期规则、项目决策或历史状态。错误记忆会被反复放大，因此重要信息要有来源、日期、负责人和更新机制。</p>
+<p>记忆最危险的地方是「它自己不会发现过期」。一条半年前的错误规则，会被 Agent 当真理反复用。</p>
+<h4 id="h-三者的区别">三者的区别</h4>
+<div class="table-wrap"><table><thead><tr><th>概念</th><th>保存什么</th><th>主要风险</th></tr></thead><tbody><tr><td>对话上下文</td><td>当前任务交流</td><td>太长、冲突、过期</td></tr><tr><td>知识库 / RAG</td><td>可检索事实与资料</td><td>来源差、版本旧、检索不到</td></tr><tr><td>记忆</td><td>偏好、长期规则、项目状态</td><td>错误被长期沿用</td></tr></tbody></table></div>
+<p>一句话区分：<strong>上下文是这次聊天的短期记忆，知识库是随时可查的资料室，记忆是跨任务保留的长期设定。</strong></p>
+<h3 id="h-workflow-与-agent-的区别">Workflow 与 Agent 的区别</h3>
+<p>前面把 Agent 讲清楚了，但还有一个常被混用的词：<strong>Workflow（工作流）</strong>。它和 Agent 不是替代关系，而是两种「组织行动」的思路。</p>
+<h4 id="h-一句话区分">一句话区分</h4>
+<ul class="doc-list"><li><strong>Workflow 是标准化的生产线</strong>：步骤在设计时就定好，按顺序或分支执行。</li><li><strong>Agent 是会思考、能自己拿主意的执行者</strong>：只给目标，运行时自己决定下一步怎么走。</li></ul>
+<p>打个比方，Workflow 像一份写了「第一步做 A，第二步做 B，B 通过后做 C 否则做 D」的 SOP；Agent 像你雇的一个人，你只说「把这批发票处理完」，他中途自己判断要先查哪张、卡住了问你。</p>
+<h4 id="h-核心区别-决策权在哪">核心区别：决策权在哪</h4>
+<p>Workflow 的每一步「走哪条路」在设计阶段就固定了；Agent 的下一步由模型在执行阶段根据环境实时决定。这是两者最本质的差别，其他差别都从这儿长出来。</p>
+<h4 id="h-对比表">对比表</h4>
+<div class="table-wrap"><table><thead><tr><th>维度</th><th>Workflow（工作流）</th><th>Agent（智能体）</th></tr></thead><tbody><tr><td>一句话</td><td>标准化的生产线</td><td>会思考、能自己拿主意的执行者</td></tr><tr><td>路径是否预设</td><td>是，步骤在设计时定好</td><td>否，运行时根据环境决定</td></tr><tr><td>决策时机</td><td>设计阶段固定</td><td>执行阶段动态</td></tr><tr><td>谁来选下一步</td><td>流程定义</td><td>模型自己</td></tr><tr><td>可控性</td><td>高，容易预测和回滚</td><td>较低，路径可能变化</td></tr><tr><td>调试难度</td><td>低，步骤清晰可追</td><td>高，需看日志和中间状态</td></tr><tr><td>适用场景</td><td>步骤明确、可重复、合规要求高</td><td>路径不确定、需环境反馈、开放目标</td></tr><tr><td>典型失败</td><td>卡在某步、分支没覆盖</td><td>跑偏、无限循环、越权操作</td></tr><tr><td>与 LLM 关系</td><td>管道里可嵌入模型，但控制流是人定的</td><td>模型驱动控制流</td></tr></tbody></table></div>
+<h4 id="h-什么时候用-workflow">什么时候用 Workflow</h4>
+<ul class="doc-list"><li>固定 SOP，比如「收到工单 → 分类 → 派给对应人」；</li><li>批量处理，比如「把 100 张图统一压缩加水印」；</li><li>合规审批，每一步都要留痕、可审计；</li><li>可重复的报表生成。</li></ul>
+<p>这些任务路径清楚，用 Workflow 更稳、更便宜、更好查。</p>
+<h4 id="h-什么时候用-agent">什么时候用 Agent</h4>
+<ul class="doc-list"><li>目标清楚但路径不清，比如「调研竞品并出对比报告」；</li><li>需要多工具探索、中途看结果再决定；</li><li>环境会变，需要边做边调整；</li><li>开放性强、难以写成固定步骤的任务。</li></ul>
+<h4 id="h-常见误区">常见误区</h4>
+<ul class="doc-list"><li><strong>「Agent 一定比 Workflow 强」</strong>：不对。确定任务用 Workflow 更稳更省，硬上 Agent 反而容易跑偏、难审计、成本高。</li><li><strong>「Workflow 不能含智能」</strong>：错。Workflow 的节点完全可以调用模型做摘要、分类、抽取，只是「走哪条路」仍由流程定。</li><li><strong>「Agent 全自动就最好」</strong>：过度放权会让失败更难定位。真复杂的系统，往往是 Agent 在高层决策，把稳定环节交给 Workflow。</li></ul>
+<h4 id="h-两者如何协同">两者如何协同</h4>
+<p>不是二选一，而是嵌套使用：</p>
+<ul class="doc-list"><li><strong>Agent 内含 Workflow</strong>：Agent 把已经稳定的子任务写成固定流程（比如一个 Skill 背后就是 Workflow），只在不确定处自己判断；</li><li><strong>Workflow 节点调 Agent</strong>：生产线上某个判断节点，交给一个 Agent 处理非结构化输入。</li></ul></div></section>
+    <footer class="doc-footer">
+      <a href="../index.html">← 回到蓝皮书首页</a>
+      <span>本页内容整理自 WorkBuddyGuide 社区蓝皮书</span>
+    </footer>
+  </main>
+</div>
+<script src="../assets/catalog.js"></script>
+<script src="../assets/content.js"></script>
+<script>
+  if (window.mermaid) { mermaid.initialize({startOnLoad:true, theme:'dark'}); }
+</script>
+</body>
+</html>
