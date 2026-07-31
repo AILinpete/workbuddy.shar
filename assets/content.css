@@ -82,4 +82,28 @@ a:hover{text-decoration:underline}
 @media(max-width:900px){
   .doc-sidebar{display:none}
   .doc-main{padding:32px 20px 60px;max-width:100%}
+  .doc-page-head h1{font-size:1.5rem}
+  .chapter-title{font-size:1.25rem}
+}
+@media(max-width:600px){
+  .doc-main{padding:24px 14px 50px}
+  .doc-page-head h1{font-size:1.3rem}
+  .doc-page-head{margin-bottom:28px;padding-bottom:18px}
+  .chapter{margin:0 0 40px}
+  .chapter-title{font-size:1.1rem}
+  .chapter-body h3{font-size:1rem}
+  .chapter-body h4{font-size:0.92rem}
+  .chapter-body p,.chapter-body ul,.chapter-body ol{font-size:0.9rem}
+  .chapter-body img{margin:12px 0;border-radius:8px}
+  .chapter-body pre.code-block{padding:12px;font-size:.82rem}
+  .chapter-body blockquote{padding:10px 14px;font-size:.88rem}
+  .doc-nav-inner{height:52px;padding:0 14px}
+  .doc-logo{font-size:.95rem}
+  .doc-logo .logo-icon{width:30px;height:30px;font-size:1rem}
+  .doc-layout{padding-top:52px}
+  .doc-sidebar{top:52px}
+  .doc-back{font-size:.8rem}
+  .table-wrap{font-size:.8rem}
+  .chapter-body th,.chapter-body td{padding:7px 8px}
+  .callout{padding:10px 14px;font-size:.88rem}
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - 页面未找到 | WorkBuddy 蓝皮书</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<style>
+  :root {
+    --pink: #FF6B8A;       --pink-light: #FFF0F3;
+    --blue: #5B9EFF;       --blue-light: #EEF5FF;
+    --green: #4ECB71;
+    --yellow: #FFBB33;     --yellow-light: #FFF8E8;
+    --bg: #FFF9F5;         --text: #4A3728;
+    --text-secondary: #8B7355;  --text-muted: #C4A882;
+    --border: #F0E6D8;     --shadow-sm: 0 4px 20px rgba(180,160,140,0.12);
+    --radius-lg: 28px;     --bounce: cubic-bezier(0.34,1.56,0.64,1);
+    --transition: 0.3s var(--bounce);
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+    background:var(--bg);color:var(--text);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+  }
+  .bg-grid{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      radial-gradient(circle,#FF6B8A15 1.5px,transparent 1.5px),
+      radial-gradient(circle,#5B9EFF15 1.5px,transparent 1.5px),
+      radial-gradient(circle,#4ECB7115 1.5px,transparent 1.5px),
+      radial-gradient(circle,#FFBB3315 1.5px,transparent 1.5px),
+      radial-gradient(circle,#A78BFA15 1.5px,transparent 1.5px);
+    background-size:70px 70px;
+    background-position:0 0,18px 18px,36px 36px,54px 54px,9px 45px;
+  }
+  .card{
+    position:relative;z-index:1;text-align:center;
+    background:#fff;border:2.5px dashed var(--border);
+    border-radius:var(--radius-lg);padding:48px 40px;
+    max-width:480px;width:90%;box-shadow:var(--shadow-sm);
+  }
+  .card .emoji{font-size:5rem;margin-bottom:16px;display:block}
+  .card h1{
+    font-size:1.8rem;font-weight:900;margin-bottom:12px;
+    background:linear-gradient(135deg,#FF6B8A,#FFBB33,#4ECB71,#5B9EFF,#A78BFA);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;background-size:400% 400%;
+    animation:rainbow 5s ease-in-out infinite;
+  }
+  @keyframes rainbow{
+    0%,100%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+  }
+  .card p{color:var(--text-secondary);font-size:1rem;margin-bottom:28px;font-weight:600;line-height:1.6}
+  .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:13px 26px;
+    border-radius:40px;font-size:.95rem;font-weight:800;
+    text-decoration:none;transition:all var(--transition);
+    font-family:inherit;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,#FF6B8A,#FF8C52);
+    color:#fff;box-shadow:0 6px 24px rgba(255,107,138,0.35);
+  }
+  .btn-primary:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 12px 36px rgba(255,107,138,0.45)}
+  .btn-outline{
+    background:#fff;color:var(--text);
+    border:2.5px solid var(--border);font-weight:700;
+  }
+  .btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-4px) scale(1.04)}
+  @media(max-width:480px){
+    .card{padding:32px 22px}
+    .card h1{font-size:1.4rem}
+    .card p{font-size:.88rem}
+    .card .emoji{font-size:3.5rem}
+    .btn{padding:11px 20px;font-size:.85rem}
+  }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="card">
+  <span class="emoji">🔍</span>
+  <h1>404 · 页面搬走了</h1>
+  <p>你找的页面可能被重命名、移动，或者根本不存在……<br>别担心，从下面找条路继续逛 👇</p>
+  <div class="links">
+    <a href="/workbuddy.shar/" class="btn btn-primary">🏠 回首页</a>
+    <a href="/workbuddy.shar/#paths" class="btn btn-outline">📖 开始阅读</a>
+  </div>
+</div>
+</body>
+</html>

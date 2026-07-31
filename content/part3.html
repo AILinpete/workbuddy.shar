@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第三篇 · 进阶篇：把案例变成自己的工作系统 - WorkBuddy 蓝皮书</title>
+<title>第三篇 · 进阶篇：变成可复用的工作系统 - WorkBuddy 蓝皮书</title>
+<meta name="description" content="WorkBuddy 蓝皮书第三篇：进阶篇。从单次任务到可复用工作系统，掌握 Agent 编排、工作流封装、Skill 沉淀，构建专属 AI 团队。">
+<meta name="keywords" content="WorkBuddy 进阶, AI Agent, 工作流自动化, Skill 封装, AI 团队">
+<meta property="og:title" content="第三篇 · 进阶篇：变成可复用的工作系统 - WorkBuddy 蓝皮书">
+<meta property="og:description" content="WorkBuddy 蓝皮书第三篇：进阶篇。从单次任务到可复用工作系统，掌握 Agent 编排、工作流封装、Skill 沉淀，构建专属 AI 团队。">
+<meta property="og:url" content="https://ailinpete.github.io/workbuddy.shar/content/part3.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WorkBuddy 蓝皮书">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第三篇 · 进阶篇：变成可复用的工作系统 - WorkBuddy 蓝皮书">
+<meta name="twitter:description" content="WorkBuddy 蓝皮书第三篇：进阶篇。从单次任务到可复用工作系统，掌握 Agent 编排、工作流封装、Skill 沉淀，构建专属 AI 团队。">
+<link rel="canonical" href="https://ailinpete.github.io/workbuddy.shar/content/part3.html">
 <link rel="stylesheet" href="../assets/content.css">
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
@@ -34,14 +45,14 @@
 <section class="chapter" id="ch22"><div class="chapter-head"><span class="chapter-badge">PART 03</span><h2 class="chapter-title">第 22 章 打造skill：将书和视频蒸馏为可执行 Skill</h2></div><div class="chapter-body"><h2 id="h-第-22-章-打造skill-将书和视频蒸馏为可执行-skill">第 22 章 打造skill：将书和视频蒸馏为可执行 Skill</h2>
 <p>制作skill，除了把自己的SOP沉淀为skill外，给大家推荐一个更简单方便的办法。</p>
 <p>可以使用<a href="https://github.com/kangarooking/cangjie-skill" target="_blank" rel="noopener">cangjie-skill</a>把知识蒸馏成skill。</p>
-<p><img src="assets/part3/ch22/001<em>image</em>WcJzb4b7Yo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/001<em>image</em>WcJzb4b7Yo.png" alt="" loading="lazy"></p>
 <p>cangjie-skill 开源项目（v1 蒸馏书，v2 增加视频蒸馏），以及 Andrej Karpathy 关于 LLM 个人知识库的思路。</p>
 <p>本章回答：如何将书本和视频中的方法论转化为 Agent 可自动调用的 Skill，以及这与 RAG 检索的本质差别在哪里。</p>
 <h3 id="h-问题起点-知识读了但用不起来">问题起点：知识读了但用不起来</h3>
 <p>AI 在训练时已经摄入了大量经典著作，但在实际问答中，它往往输出"正确的废话"——每个字都对，但缺乏针对特定问题的可落地步骤。这不是幻觉问题，而是调用机制问题：AI 知道书里有什么，但不知道该在什么场景下主动调出哪个框架。</p>
 <p>人类读者面临同样的问题。读完一本书，笔记做了、金句划了，合上书以为升级了。两周后遇到真实问题，那些方法论却抓不住。知识在记忆里，但激活路径不清晰。</p>
 <p>知识精馏要解决的，就是这个"学了用不上"的问题。</p>
-<p><img src="assets/part3/ch22/002<em>image</em>M0YFbAywgo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/002<em>image</em>M0YFbAywgo.png" alt="" loading="lazy"></p>
 <h3 id="h-知识精馏的定义">知识精馏的定义</h3>
 <p>知识精馏（Knowledge Distillation for Skills）是指：从书本或视频中，提取出具有独立触发条件和执行步骤的原子化知识单元（Skill），使 Agent 在遇到对应场景时能够自动激活并给出可落地的行动路径。</p>
 <p>化学中的精馏是按沸点将混合物分离成不同纯净组分。知识精馏按"框架 / 原则 / 案例 / 反例 / 术语"五个维度，将书或视频中的知识分离成不同类型的纯净组分，然后只把真正有用的提纯成可执行的 Skill。</p>
@@ -56,42 +67,42 @@
     C --&gt; D[阶段 3：构造 Skill]
     D --&gt; E[阶段 4：链接——建立 Skill 关系网络]
     E --&gt; F[阶段 5：压力测试]</div>
-<p><img src="assets/part3/ch22/003<em>image</em>N5i2bw6V5o.png" alt="" loading="lazy"></p>
-<p><img src="assets/part3/ch22/004<em>image</em>FiYybAIEQo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/003<em>image</em>N5i2bw6V5o.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/004<em>image</em>FiYybAIEQo.png" alt="" loading="lazy"></p>
 <p>以蒸馏《文案创作完全手册》为例</p>
-<p><img src="assets/part3/ch22/005<em>image</em>NaOwbuAcQo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/005<em>image</em>NaOwbuAcQo.png" alt="" loading="lazy"></p>
 <h4 id="h-阶段-0-整书-整片理解">阶段 0：整书 / 整片理解</h4>
 <p>不从摘取金句开始，而是先读清整本书的骨架：</p>
 <ul class="doc-list"><li>全书主旨是什么；</li><li>核心论证链怎么走；</li><li>关键术语作者如何定义和使用；</li><li>作者自身的局限与盲点在哪里。</li></ul>
 <p>这一步决定后续提取的质量上限。跳过这一步直接提取，容易把作者反对的观点当成他支持的方法论。</p>
-<p><img src="assets/part3/ch22/006<em>image</em>F5Ngb4vd5o.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/006<em>image</em>F5Ngb4vd5o.png" alt="" loading="lazy"></p>
 <h4 id="h-阶段-1-五个-agent-并行提取">阶段 1：五个 Agent 并行提取</h4>
 <p>五个 Agent 同时从五个维度扫描全文，独立工作，互不干扰：</p>
 <div class="table-wrap"><table><thead><tr><th>Agent</th><th>提取目标</th></tr></thead><tbody><tr><td>框架提取 Agent</td><td>作者构建的分析或决策框架</td></tr><tr><td>原则提取 Agent</td><td>可跨场景复用的行为原则</td></tr><tr><td>案例提取 Agent</td><td>作者援引的正面案例和成功路径</td></tr><tr><td>反例提取 Agent</td><td>作者援引的失败案例和反面教训</td></tr><tr><td>术语词典 Agent</td><td>作者专有术语及其定义</td></tr></tbody></table></div>
 <p>五个角度并行，避免单线阅读中的视角遗漏。</p>
-<p><img src="assets/part3/ch22/007<em>image</em>QMdJbhsm0o.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/007<em>image</em>QMdJbhsm0o.png" alt="" loading="lazy"></p>
 <h4 id="h-阶段-1-5-三重验证筛选">阶段 1.5：三重验证筛选</h4>
 <p>每个候选知识单元必须通过三关，未通过直接淘汰：</p>
 <div class="table-wrap"><table><thead><tr><th>验证类型</th><th>检查内容</th></tr></thead><tbody><tr><td>跨域验证</td><td>该方法论在书中至少两个独立场景出现过，不是孤证</td></tr><tr><td>预测力测试</td><td>能用它推导出书中没有直接讨论的问题吗</td></tr><tr><td>独特性检验</td><td>是不是任何人都能说出来的常识？常识不构成 Skill</td></tr></tbody></table></div>
 <p>宁缺毋滥。一本书通常有 50–100 个候选单元，通过三重验证后保留 10–25 个。</p>
-<p><img src="assets/part3/ch22/008<em>image</em>D7z7b4DWvo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/008<em>image</em>D7z7b4DWvo.png" alt="" loading="lazy"></p>
 <h4 id="h-阶段-2-构造-skill">阶段 2：构造 Skill</h4>
 <p>每个通过验证的知识单元被构造成一个 Skill，核心是设计触发条件：</p>
 <ul class="doc-list"><li>什么场景下自动激活；</li><li>激活后执行什么步骤；</li><li>什么时候不该用（边界）；</li><li>质量验证标准是什么。</li></ul>
 <p>触发条件的设计是最难也最关键的一步。没有触发条件的 Skill，在实际使用中无法被 Agent 正确识别和调用。</p>
-<p><img src="assets/part3/ch22/009<em>image</em>XXrkbXOymo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/009<em>image</em>XXrkbXOymo.png" alt="" loading="lazy"></p>
 <h4 id="h-阶段-4-链接">阶段 4：链接</h4>
 <p>找出 Skill 之间的关系，形成知识网络：</p>
 <ul class="doc-list"><li><strong>依赖</strong>：Skill A 的执行需要先调用 Skill B 的输出；</li><li><strong>对比</strong>：Skill A 和 Skill B 适用于相似场景但方向相反；</li><li><strong>组合</strong>：Skill A 和 Skill C 联合使用效果更好。</li></ul>
 <p>链接层让 Agent 在遇到复杂问题时，能够选择一组 Skill 而不只是单个 Skill。</p>
-<p><img src="assets/part3/ch22/010<em>image</em>BXYeb8ld7o.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/010<em>image</em>BXYeb8ld7o.png" alt="" loading="lazy"></p>
 <h4 id="h-阶段-5-压力测试">阶段 5：压力测试</h4>
 <p><strong>诱饵测试</strong>：故意给不该触发的场景，检验 Skill 是否能忍住不激活。一个没有边界的 Skill，在错误场景下调用反而帮倒忙。</p>
 <p><strong>执行验证</strong>：给出真实问题，验证 Skill 是否能输出可落地的步骤而不是正确的废话。</p>
-<p><img src="assets/part3/ch22/011<em>image</em>NwvvbJkuco.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/011<em>image</em>NwvvbJkuco.png" alt="" loading="lazy"></p>
 <h3 id="h-蒸馏产物结构">蒸馏产物结构</h3>
 <p>一本书蒸馏完成后，产物是一套 Skill 集合：</p>
-<p><img src="assets/part3/ch22/012<em>image</em>LEKGbkn2Go.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/012<em>image</em>LEKGbkn2Go.png" alt="" loading="lazy"></p>
 <pre class="code-block"><code>book-skill/
 ├── README.md               # 书目信息、蒸馏说明、适用场景
 ├── skills/
@@ -103,8 +114,8 @@
     ├── skill-01-test.md    # 每个 Skill 的测试用例
     └── ...</code></pre>
 <p>每个 Skill 文件包含：触发条件、执行步骤、输出格式、边界限制、测试用例。测试用例格式兼容 darwin-skill（自动 Skill 进化工具），蒸馏产物可以持续自动优化。</p>
-<p><img src="assets/part3/ch22/013<em>image</em>Mp0ZbEmn7o.png" alt="" loading="lazy"></p>
-<p><img src="assets/part3/ch22/014<em>image</em>C1aCbJYz3o.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/013<em>image</em>Mp0ZbEmn7o.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/014<em>image</em>C1aCbJYz3o.png" alt="" loading="lazy"></p>
 <h3 id="h-知识精馏-vs-rag">知识精馏 vs RAG</h3>
 <p>这是使用者最常问的问题。</p>
 <div class="table-wrap"><table><thead><tr><th>维度</th><th>RAG</th><th>知识精馏（Skill）</th></tr></thead><tbody><tr><td>本质</td><td>检索——找出最相关的原文片段</td><td>提炼——从原文中提取可执行的方法论</td></tr><tr><td>使用前提</td><td>用户需要知道该问什么</td><td>用户描述问题，Skill 自动识别并激活</td></tr><tr><td>质量控制</td><td>无——任何内容都可以入库</td><td>三重验证过滤，宁缺毋滥</td></tr><tr><td>调用方式</td><td>被动等待查询</td><td>主动匹配场景并触发</td></tr><tr><td>知识形态</td><td>存储原文（记住知识）</td><td>提纯为执行步骤（运用知识）</td></tr><tr><td>边界控制</td><td>无</td><td>诱饵测试确保不乱激活</td></tr><tr><td>资源消耗</td><td>较重（需维护向量索引）</td><td>较轻（Skill 文件即可）</td></tr></tbody></table></div>
@@ -118,7 +129,7 @@
 <p>两种方案不互斥，但目标不同。</p>
 <h3 id="h-视频蒸馏工作流-v2-新增">视频蒸馏工作流（v2 新增）</h3>
 <p>cangjie-skill v2 在书本蒸馏基础上增加了视频蒸馏能力（借助<a href="https://github.com/kangarooking/kangarooking-skills/tree/main/video-downloader" target="_blank" rel="noopener">video-downloader skill</a>）。视频与书的区别在于：需要先完成"视频 → 文字"的转换，再进入六阶段 SOP。</p>
-<p><img src="assets/part3/ch22/015<em>image</em>MG56bW6jlo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/015<em>image</em>MG56bW6jlo.png" alt="" loading="lazy"></p>
 <h4 id="h-视频获取与转写">视频获取与转写</h4>
 <p>整体流程：</p>
 <div class="mermaid">flowchart LR
@@ -172,7 +183,7 @@
 <h3 id="h-蒸馏结果示例">蒸馏结果示例</h3>
 <p>以吴恩达《给所有人的 AI 入门课》（2026 版，26 个视频，时长约 4 小时）为例：</p>
 <ul class="doc-list"><li>蒸馏耗时：约 1 小时</li><li>产出：25 个 Skill</li><li>特点：全部为时效性内容，AI 未经训练，蒸馏后可直接在对应场景下被 Agent 调用</li></ul>
-<p><img src="assets/part3/ch22/016<em>image</em>HoW7bnRYFo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch22/016<em>image</em>HoW7bnRYFo.png" alt="" loading="lazy"></p>
 <h3 id="h-总结-知识精馏在技能包体系中的位置">总结：知识精馏在技能包体系中的位置</h3>
 <p>知识精馏是 Skill 的一种生产方式。它和第 25 章讨论的 SOP → Skill 封装流程是并行的：</p>
 <div class="table-wrap"><table><thead><tr><th>来源</th><th>适用场景</th></tr></thead><tbody><tr><td>从业务流程提炼（SOP → Skill）</td><td>企业内部操作规范、重复性业务流程</td></tr><tr><td>从书本 / 视频蒸馏（知识精馏）</td><td>专家方法论、经典著作、高价值课程内容</td></tr></tbody></table></div>
@@ -183,7 +194,7 @@
 <h3 id="h-模型与成本-先把免费额度用透">模型与成本：先把免费额度用透</h3>
 <p>WorkBuddy 内置了多款国产大模型。每日签到领取的积分基本能覆盖轻度使用的全部消耗。新发布的模型通常附带免费体验期——以 HY3 为例，发布后有两周免费额度，即使过期，定价也属于国产模型性价比第一梯队。</p>
 <p>如果拿不准做什么，WorkBuddy 已经按应用场景预设了模板，选一个直接开始即可。</p>
-<p><img src="assets/part3/ch23/001<em>01</em>app<em>templates</em>To5yb29RMo.gif" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch23/001<em>01</em>app<em>templates</em>To5yb29RMo.gif" alt="" loading="lazy"></p>
 <h3 id="h-短任务实战-excel-可视化与数据清洗">短任务实战：Excel 可视化与数据清洗</h3>
 <p>HY3 在短任务上表现突出。PPT 生成、数据清洗、Excel 图表可视化分析都能直接完成。</p>
 <p>从开屏界面出发，输入任务描述后点击右下角"优化提示词"按钮，WorkBuddy 会自动补全细节并执行。</p>
@@ -195,7 +206,7 @@
 3. 异常大额支出标注；
 4. 给出 3 条可操作的省钱建议。</code></pre>
 <p>执行过程可能较慢，但最终产出的可视化效果通常超出预期——包括图表、趋势分析和文字总结。数据清洗和 PPT 生成同理。</p>
-<p><img src="assets/part3/ch23/002<em>image</em>F4BfbagcFo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch23/002<em>image</em>F4BfbagcFo.png" alt="" loading="lazy"></p>
 <h3 id="h-设计创意-用提示词生成完整网站">设计创意：用提示词生成完整网站</h3>
 <p>这是一个容易被低估的用法。勾选"网站设计"场景后给出提示词，可以生成可运行的前端页面。以下是两个经过验证的模板。</p>
 <h4 id="h-模板一-个人作品集-hero-section">模板一：个人作品集 Hero Section</h4>
@@ -224,7 +235,7 @@
 5. 移动端：汉堡菜单，CSS Grid 展开动画；
 6. 按钮 hover：白色填充变黑色文字。</code></pre>
 <p>以上两个模板全程使用 HY3 模型完成。</p>
-<p><img src="assets/part3/ch23/004<em>03</em>website<em>design</em>WX9gb8dBMo.gif" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch23/004<em>03</em>website<em>design</em>WX9gb8dBMo.gif" alt="" loading="lazy"></p>
 <h3 id="h-skill-联动-跨服务的智能推荐">Skill 联动：跨服务的智能推荐</h3>
 <p>WorkBuddy 的 Skill 系统允许 Agent 连接日常使用的各类服务。这种跨服务联动是 Skill 生态的核心价值——不是替代某个 App，而是成为多个 App 之间的连接层。</p>
 <p><strong>示例：微信读书 + QQ 音乐</strong></p>
@@ -236,15 +247,15 @@
 2. 分析书目的情绪基调和主题；
 3. 在 QQ 音乐中匹配风格相近的歌单；
 4. 输出推荐理由和歌单链接。</code></pre>
-<p><img src="assets/part3/ch23/005<em>04</em>skill<em>music</em>GxX3brlGeo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch23/005<em>04</em>skill<em>music</em>GxX3brlGeo.png" alt="" loading="lazy"></p>
 <p>微信读书 Skill 的安装链接可以在官方页面获取：<code>https://weread.qq.com/r/weread-skills</code>。</p></div></section>
 <section class="chapter" id="ch24"><div class="chapter-head"><span class="chapter-badge">PART 03</span><h2 class="chapter-title">第 24 章 如何进行多 Agent 系统设计</h2></div><div class="chapter-body"><h2 id="h-第-24-章-如何进行多-agent-系统设计">第 24 章 如何进行多 Agent 系统设计</h2>
 <p>一人公司产品宣传部实践（HyperFrames + 多 Agent）、WorkBuddy 专家团产品。本章以产品宣传片专家团的实际案例，回答：多 Agent 系统如何设计分工、如何串联产物、何时值得拆分。</p>
-<p><img src="assets/part3/ch24/001<em>image</em>AkBibtRBOo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/001<em>image</em>AkBibtRBOo.png" alt="" loading="lazy"></p>
 <h3 id="h-单-agent-和多-agent-的真正差别">单 Agent 和多 Agent 的真正差别</h3>
 <div class="table-wrap"><table><thead><tr><th>维度</th><th>单 Agent</th><th>多 Agent</th></tr></thead><tbody><tr><td>上下文</td><td>所有信息在一个任务</td><td>角色只接收必要上下文</td></tr><tr><td>分工</td><td>一个执行体串行完成</td><td>多角色并行或接力</td></tr><tr><td>工具</td><td>同一组权限</td><td>可按角色隔离工具和权限</td></tr><tr><td>质量</td><td>自己生成、自己检查</td><td>可设置独立评审者</td></tr><tr><td>成本</td><td>较低</td><td>协调、模型和工具调用更多</td></tr><tr><td>风险</td><td>一处错误影响整体</td><td>错误可能在角色间传播</td></tr></tbody></table></div>
 <p>多 Agent 的价值来自专业分工、并行、权限隔离或独立评审，不来自角色数量。</p>
-<p><img src="assets/part3/ch24/002<em>image</em>WdfWbMN9Do.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/002<em>image</em>WdfWbMN9Do.png" alt="" loading="lazy"></p>
 <h3 id="h-任务是否值得拆分">任务是否值得拆分</h3>
 <p>满足越多，越适合多 Agent：</p>
 <ul class="doc-list"><li>至少两个子任务可以独立进行；</li><li>子任务需要不同方法、资料或工具；</li><li>输出可以定义清楚的交接格式；</li><li>并行能显著缩短等待；</li><li>有明确总负责人和最终验收；</li><li>预算允许多轮调用。</li></ul>
@@ -252,7 +263,7 @@
 <h3 id="h-案例-产品宣传片专家团">案例：产品宣传片专家团</h3>
 <h4 id="h-任务背景">任务背景</h4>
 <p>HyperFrames 是 HeyGen 开源的视频渲染框架（截至案例时 GitHub 17.7K Star），核心特点是对 AI Agent 友好：Agent 可以自动生成基于 HTML 的视频帧并渲染输出。产品宣传片具有相对固定的套路——无需口播和演员，主要由产品展示、概念字幕和 BGM 构成。这类任务适合 Agent 团队分工处理。</p>
-<p><img src="assets/part3/ch24/003<em>image</em>NhwLbBH33o.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/003<em>image</em>NhwLbBH33o.png" alt="" loading="lazy"></p>
 <h4 id="h-工序设计">工序设计</h4>
 <p>产品宣传片专家团的完整工序如下：</p>
 <div class="mermaid">flowchart TD
@@ -268,14 +279,14 @@
 <h4 id="h-专家团演示">专家团演示</h4>
 <p>在做产品宣传片之前，需要先把相关素材放到工作空间内。</p>
 <pre class="code-block"><code>我希望你做一个产品宣传片，具体的话，是宣传腾讯的workbuddy最新的专家团，主打opc场景。当前空间下我放了一些素材，成片风格可以偏apple风格、真实软件界面。整个过程全自动</code></pre>
-<p><img src="assets/part3/ch24/004<em>image</em>MdzDbUKmlo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/004<em>image</em>MdzDbUKmlo.png" alt="" loading="lazy"></p>
 <p>团长先接到任务：把"做一支宣传片"拆成了一串子任务：先得搞清楚 WorkBuddy 专家团到底是什么、卖给谁、核心价值是什么；再决定叙事结构、镜头数量、节奏；然后再分头去做素材、剪辑、配乐。</p>
 <p>brief 角色先开工：去把 WorkBuddy 官网、产品介绍、专家团列表都翻了一遍，输出一份 brief ，这是什么产品、目标用户是谁、最值得放进 60 秒的几个核心点。</p>
 <p>分镜师接着 brief 干活：把 60 秒拆成了 7 个镜头，每个镜头都细到时间码、画面、文字、转场、动效、需要的素材类型。</p>
 <p>然后 素材师 和 剪辑师 开始干活：一个去生成 / 抓产品截图、概念图，另一个把素材按分镜表往 HyperFrames 里塞，逐镜头渲染出每一段 MP4。</p>
 <p>最有意思的是 配乐师：它不是简单写个"科技感 BGM"的 prompt 完事，它会先把分镜表读一遍，研究每个镜头的情绪曲线，标好哪些地方需要鼓点卡产品 reveal、哪些地方需要降下来做留白、哪些地方需要一个 hit point 推 CTA。然后再去调用音乐模型生成候选 BGM。</p>
 <p>最后由 团长 把所有产物整合，跑最后一道剪辑，输出成片。</p>
-<p><img src="assets/part3/ch24/005<em>image</em>QASabZlKzo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/005<em>image</em>QASabZlKzo.png" alt="" loading="lazy"></p>
 <p>整个过程我基本就是个旁观者：偶尔在关键节点拍一下板，比如分镜要不要这么排、BGM 喜不喜欢、字幕文案要不要改。</p>
 <p>最后出来的片子，还挺不错的。</p>
 <p>&lt;video controls preload="metadata" src="./assets/006<em>asset</em>Um2SbSClHo.mp4"&gt;&lt;/video&gt;</p>
@@ -307,12 +318,12 @@
 <h4 id="h-预置专家团">预置专家团</h4>
 <p>WorkBuddy 专家团将上述分工产品化：团长负责任务拆解和分配，团员并行执行，用户只需描述任务。</p>
 <p>创建专家团也很简单在专家-&gt;我的专家-&gt;创建专家</p>
-<p><img src="assets/part3/ch24/007<em>image</em>BNYQbIE2no.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/007<em>image</em>BNYQbIE2no.png" alt="" loading="lazy"></p>
 <p>就会跳转到workbuddy的对话框，根据它给定的格式即可快速创建属于自己的专家。</p>
-<p><img src="assets/part3/ch24/008<em>image</em>KXwlbyY7Oo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/008<em>image</em>KXwlbyY7Oo.png" alt="" loading="lazy"></p>
 <p>当前专家团覆盖的典型场景：</p>
 <div class="table-wrap"><table><thead><tr><th>场景类别</th><th>代表专家团</th></tr></thead><tbody><tr><td>内容创作</td><td>产品宣传片、爆款内容创作、全域分发</td></tr><tr><td>软件研发</td><td>软件开发、代码测试</td></tr><tr><td>商业分析</td><td>深度研究、投资分析、数据分析</td></tr><tr><td>业务支持</td><td>SEO、销售、营销、财税合规、HR</td></tr><tr><td>法律合规</td><td>中文法律</td></tr></tbody></table></div>
-<p><img src="assets/part3/ch24/009<em>image</em>HDlMbAHGTo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch24/009<em>image</em>HDlMbAHGTo.png" alt="" loading="lazy"></p>
 <h4 id="h-两种路径的选择">两种路径的选择</h4>
 <div class="table-wrap"><table><thead><tr><th>维度</th><th>自建 Skills</th><th>预置专家团</th></tr></thead><tbody><tr><td>适用人群</td><td>开发者，需要深度定制</td><td>一人公司，直接使用</td></tr><tr><td>上手门槛</td><td>高（需定义角色、调试流程）</td><td>低（描述任务即可）</td></tr><tr><td>灵活度</td><td>高（可修改任意环节）</td><td>中（支持自定义模型接入）</td></tr><tr><td>速度</td><td>取决于搭建时间</td><td>即开即用</td></tr></tbody></table></div>
 <h3 id="h-质量影响因素">质量影响因素</h3>
@@ -343,8 +354,8 @@
 - 多引擎 AI 新闻聚合（@多引擎搜索）
 - AI 热点追踪（@AIHOT）</code></pre>
 <p>手动运行一次这个任务，WorkBuddy 会同时调用五个数据源，整合输出一份当日 AI 热点清单，供博主快速判断和筛选。</p>
-<p><img src="assets/part3/ch25/001<em>image</em>FGBhb1udco.png" alt="" loading="lazy"></p>
-<p><img src="assets/part3/ch25/002<em>image</em>Yuucbmf9So.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch25/001<em>image</em>FGBhb1udco.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch25/002<em>image</em>Yuucbmf9So.png" alt="" loading="lazy"></p>
 <p>跑通一次后，下一步是把它设置为定时自动化任务：每天早上 9:00 自动运行，结果推送到指定位置，无需每天手动触发。</p>
 <p>本章围绕这个场景，说明从"能用"到"可靠自动化"需要处理哪些问题。</p>
 <h3 id="h-自动化前的三个门槛">自动化前的三个门槛</h3>
@@ -357,10 +368,10 @@
 <pre class="code-block"><code>把这个任务设置为自动化，每天早上 9:00 运行，
 结果发送到 [指定飞书群 / 邮件 / 企微通知]。</code></pre>
 <p>WorkBuddy 会将当前 Prompt 和数据源配置保存为定时任务，按设定时间自动执行。</p>
-<p><img src="assets/part3/ch25/003<em>image</em>RNrFb50Tqo.png" alt="" loading="lazy"></p>
-<p><img src="assets/part3/ch25/004<em>image</em>IPtlb5D3Zo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch25/003<em>image</em>RNrFb50Tqo.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch25/004<em>image</em>IPtlb5D3Zo.png" alt="" loading="lazy"></p>
 <p>设置完成后，每天早上 9:00，WorkBuddy 自动调用五个数据源，整合结果并推送。博主打开通知，直接开始筛选选题，不需要手动触发。</p>
-<p><img src="assets/part3/ch25/005<em>image</em>A6Jmbe0tao.png" alt="" loading="lazy"></p>
+<p><img loading="lazy" src="assets/part3/ch25/005<em>image</em>A6Jmbe0tao.png" alt="" loading="lazy"></p>
 <h3 id="h-把自动化任务设计成状态机">把自动化任务设计成状态机</h3>
 <p>自动化不是让任务"跑起来就行"。真实环境中，每次运行都可能遇到：某个数据源返回超时、热搜榜当日无 AI 相关条目、GitHub API 限流、推送目标不可达。</p>
 <p>将任务设计成状态机，每个状态都有明确的成功条件和失败出口：</p>

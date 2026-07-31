@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ailinpete.github.io/workbuddy.shar/sitemap.xml

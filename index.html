@@ -3,8 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkBuddy 蓝皮书 🌈 AI 实战指南</title>
+<title>WorkBuddy 蓝皮书 🌈 AI 实战指南 - 从 0 到 1 学会 AI 工作流</title>
+<meta name="description" content="WorkBuddy 蓝皮书 — 一套以真实工作为主线的 AI 实战指南。27 章节、11 个真实案例、4 条学习路径，开源分享，帮你从 0 到 1 构建自己的 AI 工作系统。">
+<meta name="keywords" content="WorkBuddy, AI 工作流, AI 生产力, 腾讯 AI, 智能助手, AI 实战, 蓝皮书">
+<meta name="author" content="WorkBuddy Guide Contributors">
+<meta property="og:title" content="WorkBuddy 蓝皮书 — AI 实战指南">
+<meta property="og:description" content="27 章节、11 个真实案例，循序渐进的四条学习路径，开源分享，让 WorkBuddy 成为你的生产力。">
+<meta property="og:url" content="https://ailinpete.github.io/workbuddy.shar/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WorkBuddy 蓝皮书">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WorkBuddy 蓝皮书 — AI 实战指南">
+<meta name="twitter:description" content="27 章节、11 个真实案例，从 0 到 1 学会 AI 工作流。">
+<link rel="canonical" href="https://ailinpete.github.io/workbuddy.shar/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "WorkBuddy 蓝皮书",
+  "description": "一套以真实工作为主线的 WorkBuddy AI 实战指南，27 章节、11 个真实案例。",
+  "author": {"@type": "Organization", "name": "WorkBuddy Guide Contributors"},
+  "inLanguage": "zh-CN",
+  "license": "https://opensource.org/licenses/MIT",
+  "numberOfPages": "27",
+  "about": {"@type": "Thing", "name": "WorkBuddy AI 工作流"}
+}
+</script>
 <style>
   /* ===== 🌈 幼稚园糖果色主题 ===== */
   :root {
@@ -669,32 +694,80 @@
   .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: color var(--transition); }
   .footer-links a:hover { color: var(--pink); }
 
-  /* ===== 📱 响应式 ===== */
-  @media (max-width: 768px) {
-    .hero { padding: 120px 0 50px; }
-    .hero-stats { gap: 10px; }
-    .hero-stats .stat .num { font-size: 1.6rem; }
-    .hero-stats .stat { padding: 10px 14px; min-width: 80px; }
-    section { padding: 56px 0; }
-    .nav-links, .nav-actions .btn-community { display: none; }
-    .mobile-toggle { display: flex; }
-    .pipeline-arrow { transform: rotate(90deg); }
-    .pipeline { flex-direction: column; align-items: center; }
-    .pipeline-step { max-width: 100%; width: 100%; }
-    .footer-inner { flex-direction: column; text-align: center; }
-    .qr-section { flex-direction: column; text-align: center; }
-    .qr-info { text-align: center; }
-    @media (max-width: 400px) { .faq-grid { grid-template-columns: 1fr; } }
-    .cta-container { padding: 36px 24px; }
-    .btn { padding: 13px 24px; font-size: 0.9rem; }
-    .curator-note { flex-direction: column; text-align: center; }
+  /* ===== 📱 响��式 ===== */
+  /* 平板 (769 - 1024px) */
+  @media (max-width: 1024px) {
+    .container { padding: 0 20px; }
+    .paths-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .tasks-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .features-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .faq-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .team-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); }
+    .hero { padding: 130px 0 50px; }
+    section { padding: 60px 0; }
+    .pipeline-step { min-width: 140px; padding: 20px 16px; }
   }
 
-  @media (max-width: 480px) {
+  /* 手机横屏 / 小平板 (769px 以下) */
+  @media (max-width: 768px) {
+    .hero { padding: 110px 0 40px; }
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 0.95rem; }
     .hero-stats { gap: 8px; }
-    .hero h1 { font-size: 1.9rem; }
-    .features-bar { gap: 8px; }
-    .feature-tag { padding: 8px 14px; font-size: 0.8rem; }
+    .hero-stats .stat { padding: 10px 12px; min-width: 70px; }
+    .hero-stats .stat .num { font-size: 1.4rem; }
+    .hero-stats .stat .label { font-size: 0.72rem; }
+    section { padding: 48px 0; }
+    .nav-links, .nav-actions .btn-community { display: none; }
+    .mobile-toggle { display: flex; }
+    .pipeline { flex-direction: column; align-items: center; }
+    .pipeline-arrow { transform: rotate(90deg); }
+    .pipeline-step { max-width: 100%; width: 100%; }
+    .paths-grid { grid-template-columns: 1fr; gap: 14px; }
+    .tasks-grid { grid-template-columns: 1fr; gap: 14px; }
+    .features-grid { grid-template-columns: 1fr; gap: 14px; }
+    .faq-grid { grid-template-columns: 1fr; gap: 10px; }
+    .team-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+    .about-grid { grid-template-columns: 1fr; gap: 14px; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+    .qr-section { flex-direction: column; text-align: center; }
+    .qr-info { text-align: center; max-width: 100%; }
+    .cta-container { padding: 32px 20px; }
+    .cta h2 { font-size: 1.5rem; }
+    .btn { padding: 12px 22px; font-size: 0.9rem; }
+    .curator-note { flex-direction: column; text-align: center; }
+    .section-header h2 { font-size: 1.5rem; }
+    .section-header p { font-size: 0.88rem; }
+    .search-modal { margin: 0 16px; padding: 12px; }
+    .search-modal input { padding: 12px 16px; font-size: 0.95rem; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .hero-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
+    .features-bar { gap: 6px; padding: 0 16px 32px; }
+    .feature-tag { padding: 7px 12px; font-size: 0.78rem; }
+    .catalog-part { padding: 18px; }
+    .catalog-part-head { gap: 8px; }
+    .catalog-part-head h3 { font-size: 0.95rem; }
+    .chapter-chip { padding: 6px 12px; font-size: 0.8rem; }
+  }
+
+  /* 小手机 (480px 以下) */
+  @media (max-width: 480px) {
+    .hero { padding: 100px 0 32px; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero-stats { gap: 6px; }
+    .hero-stats .stat { padding: 8px 10px; min-width: 62px; }
+    .hero-stats .stat .num { font-size: 1.2rem; }
+    .hero-stats .stat .label { font-size: 0.68rem; }
+    .features-bar { gap: 4px; }
+    .feature-tag { padding: 6px 10px; font-size: 0.73rem; }
+    .team-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .nav-inner { height: 56px; padding: 0 16px; }
+    .nav-logo { font-size: 1rem; }
+    .nav-logo .logo-icon { width: 36px; height: 36px; font-size: 1.1rem; }
+    .mobile-menu { top: 56px; }
+    .btn { padding: 10px 18px; font-size: 0.83rem; }
+    .qr-image { width: 150px; height: 150px; }
   }
 </style>
 </head>
